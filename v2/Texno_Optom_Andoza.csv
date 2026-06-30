@@ -1,0 +1,7 @@
+category,id,name,price,socket,ddr,tdp,watt,type,image
+case,case1,FSP CMT192 (Mesh),45,,,,,,fsp.jpg
+case,case2,Montech X3 Mesh,55,,,,,,montech.jpg
+cpu,c1,Intel Core i5-12400F,135,LGA1700,,65,,intel,
+mb,mb1,MSI PRO H610M-E,75,LGA1700,DDR4,,,,
+ram,r1,Lexar Thor 16GB (2x8) DDR4,40,,DDR4,,,,
+gpu,g1,Palit RTX 3060 12GB,290,,,,,,

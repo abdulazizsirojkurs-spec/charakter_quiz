@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texno Optom Gaming | PC Konfigurator</title>
+<meta name="description" content="Texno Optom Gaming - professional kompyuter konfiguratsiya qiling. Protsessor, videokarta, monitor va boshqa detallarni tanlang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🖥</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="logo" style="display:flex; flex-direction:column; justify-content:center;">
+    <img src="img/Logo_white.jpg" alt="TEXNO OPTOM" style="height: 50px; width: auto; object-fit: contain;">
+  </div>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <button class="btn" onclick="openAdmin()">⚙ Admin</button>
+    <button class="btn" onclick="window.print()">🖨 Chop etish</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="steps" id="steps-container"></div>
+
+  <div class="sidebar">
+    <div class="total-sec">
+      <div class="total-lbl">JAMI NARX</div>
+      <div class="total-val" id="total-price">—</div>
+      <div class="warn" id="total-warn" style="display:none">⚠ To'liq narxni ko'rish uchun asosiy 7 ta qismni tanlang</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="count-badge" id="count-badge">0 / 9 tanlandi</div>
+    <div id="case-preview"></div>
+    <div class="s-items" id="summary-items"></div>
+    <div id="badges-container"></div>
+    <div class="actions">
+      <a href="#" class="btn btn-cta" id="btn-tg" target="_blank">BUYURTMA BERISH</a>
+      <button class="btn" onclick="clearAll()">Tozalash</button>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Modal -->
+<div class="modal-bg" id="admin-modal">
+  <div class="modal">
+    <h3>⚙ Admin Panel</h3>
+    <label>Admin Parol:</label>
+    <input type="password" id="admin-pwd" placeholder="Admin parolini kiriting">
+    <label>Marja ($):</label>
+    <input type="number" id="admin-margin" value="100" step="10">
+    <label>Excel Prays (.xlsx):</label>
+    <input type="file" id="admin-file" accept=".xlsx,.xls">
+    <p style="font-size:.7rem;color:var(--muted);margin-top:.3rem">Ustunlar: category, name, price, socket, ddr, tdp, watt, type, size, hz, panel</p>
+    <div id="admin-msg" class="msg" style="display:none"></div>
+    <div style="display:flex;gap:.8rem;margin-top:1.2rem">
+      <button class="btn btn-green" style="flex:1" onclick="adminSave()">💾 Saqlash</button>
+      <button class="btn" style="flex:1" onclick="closeAdmin()">✕ Yopish</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

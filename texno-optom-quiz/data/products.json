@@ -1,0 +1,1470 @@
+[
+  {
+    "id": "plat-amd",
+    "category": "platform",
+    "name": "AMD Platforma",
+    "price_uzs": 0,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform_code": "AMD",
+    "display_order": 1
+  },
+  {
+    "id": "plat-intel",
+    "category": "platform",
+    "name": "Intel Platforma",
+    "price_uzs": 0,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform_code": "Intel",
+    "display_order": 2
+  },
+  {
+    "id": "cpu-intel-core-i3-12100f",
+    "category": "cpu",
+    "name": "Intel Core i3-12100F",
+    "price_uzs": 1238400,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i3-14100f",
+    "category": "cpu",
+    "name": "Intel Core i3-14100F",
+    "price_uzs": 1367400,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i5-12400f",
+    "category": "cpu",
+    "name": "Intel Core i5-12400F",
+    "price_uzs": 1767300,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i5-13400f",
+    "category": "cpu",
+    "name": "Intel Core i5-13400F",
+    "price_uzs": 2025300,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i5-14400f",
+    "category": "cpu",
+    "name": "Intel Core i5-14400F",
+    "price_uzs": 2051100,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i5-14600kf",
+    "category": "cpu",
+    "name": "Intel Core i5-14600KF",
+    "price_uzs": 3044400,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i7-13700f",
+    "category": "cpu",
+    "name": "Intel Core i7-13700F",
+    "price_uzs": 3870000,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i7-14700f",
+    "category": "cpu",
+    "name": "Intel Core i7-14700F",
+    "price_uzs": 3999000,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i7-14700kf",
+    "category": "cpu",
+    "name": "Intel Core i7-14700KF",
+    "price_uzs": 4282800,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-i9-14900kf",
+    "category": "cpu",
+    "name": "Intel Core i9-14900KF",
+    "price_uzs": 5676000,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-ultra-5-225f",
+    "category": "cpu",
+    "name": "Intel Core Ultra 5-225F",
+    "price_uzs": 1677000,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1851",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-ultra-5-245kf",
+    "category": "cpu",
+    "name": "Intel Core Ultra 5-245KF",
+    "price_uzs": 2347800,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1851",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-intel-core-ultra-7-265kf",
+    "category": "cpu",
+    "name": "Intel Core Ultra 7-265KF",
+    "price_uzs": 3676500,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1851",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-5500",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 5500",
+    "price_uzs": 1161000,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM4",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-5600",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 5600",
+    "price_uzs": 1612500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM4",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-5600x",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 5600X",
+    "price_uzs": 1741500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM4",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-7-5700x",
+    "category": "cpu",
+    "name": "AMD Ryzen 7 5700X",
+    "price_uzs": 1870500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM4",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-7500f",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 7500F",
+    "price_uzs": 1612500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-7600x",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 7600X",
+    "price_uzs": 2218800,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-7-7700x",
+    "category": "cpu",
+    "name": "AMD Ryzen 7 7700X",
+    "price_uzs": 3005700,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-7-7800x3d",
+    "category": "cpu",
+    "name": "AMD Ryzen 7 7800X3D",
+    "price_uzs": 3934500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-5-9600x",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 9600X",
+    "price_uzs": 2451000,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-7-9800x3d",
+    "category": "cpu",
+    "name": "AMD Ryzen 7 9800X3D",
+    "price_uzs": 5482500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-9-9900x",
+    "category": "cpu",
+    "name": "AMD Ryzen 9 9900X",
+    "price_uzs": 4837500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "cpu-amd-ryzen-9-9950x3d",
+    "category": "cpu",
+    "name": "AMD Ryzen 9 9950X3D",
+    "price_uzs": 8320500,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65
+  },
+  {
+    "id": "mb-gigabyte-h610m-k-ddr4",
+    "category": "motherboard",
+    "name": "Gigabyte H610M K DDR4",
+    "price_uzs": 722400,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "ddr_type": "DDR4",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-msi-pro-b760m-e-ddr4",
+    "category": "motherboard",
+    "name": "MSI PRO B760M-E DDR4",
+    "price_uzs": 1057800,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "ddr_type": "DDR4",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-msi-pro-b760m-p-ddr5",
+    "category": "motherboard",
+    "name": "MSI PRO B760M-P DDR5",
+    "price_uzs": 1264200,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-gigabyte-z790d-ddr5",
+    "category": "motherboard",
+    "name": "Gigabyte Z790D DDR5",
+    "price_uzs": 2322000,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-gigabyte-b860m-gaming-wifi6-ddr5",
+    "category": "motherboard",
+    "name": "Gigabyte B860M GAMING WIFI6 DDR5",
+    "price_uzs": 2257500,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1851",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-msi-pro-b650m-p-ddr5",
+    "category": "motherboard",
+    "name": "MSI PRO B650M-P DDR5",
+    "price_uzs": 1419000,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-msi-pro-b840m-b-ddr5",
+    "category": "motherboard",
+    "name": "MSI PRO B840M-B DDR5",
+    "price_uzs": 1225500,
+    "image_url": "/products/mb-default.png",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "ram-ddr4-8gb-3200mhz",
+    "category": "ram",
+    "name": "DDR4 8GB 3200MHz",
+    "price_uzs": 645000,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR4",
+    "size_gb": 8
+  },
+  {
+    "id": "ram-ddr4-8gb-3200mhz",
+    "category": "ram",
+    "name": "DDR4 8GB 3200MHz",
+    "price_uzs": 683700,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR4",
+    "size_gb": 8
+  },
+  {
+    "id": "ram-ddr4-16gb-3200mhz",
+    "category": "ram",
+    "name": "DDR4 16GB 3200MHz",
+    "price_uzs": 1264200,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR4",
+    "size_gb": 16
+  },
+  {
+    "id": "ram-ddr4-32gb-3600mhz-rgb",
+    "category": "ram",
+    "name": "DDR4 32GB 3600MHz RGB",
+    "price_uzs": 2476800,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR4",
+    "size_gb": 32
+  },
+  {
+    "id": "ram-ddr5-16gb-5600mhz",
+    "category": "ram",
+    "name": "DDR5 16GB 5600MHz",
+    "price_uzs": 2193000,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR5",
+    "size_gb": 16
+  },
+  {
+    "id": "ram-ddr5-16gb-6000mhz",
+    "category": "ram",
+    "name": "DDR5 16GB 6000MHz",
+    "price_uzs": 2193000,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR5",
+    "size_gb": 16
+  },
+  {
+    "id": "ram-ddr5-8gb-5600mhz",
+    "category": "ram",
+    "name": "DDR5 8GB 5600MHz",
+    "price_uzs": 1096500,
+    "image_url": "/products/ram-default.png",
+    "in_stock": true,
+    "ddr_type": "DDR5",
+    "size_gb": 8
+  },
+  {
+    "id": "gpu-axle-gt730-4gb-ddr3",
+    "category": "gpu",
+    "name": "Axle GT730 4GB DDR3",
+    "price_uzs": 580500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rx580-8gb",
+    "category": "gpu",
+    "name": "Peladin RX580 8GB",
+    "price_uzs": 1444800,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-gtx1650-4gb",
+    "category": "gpu",
+    "name": "Peladin GTX1650 4GB",
+    "price_uzs": 1806000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-gtx1660-super-6gb",
+    "category": "gpu",
+    "name": "Peladin GTX1660 Super 6GB",
+    "price_uzs": 2128500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx2060-super-8gb",
+    "category": "gpu",
+    "name": "Peladin RTX2060 Super 8GB",
+    "price_uzs": 2838000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx3050-8gb",
+    "category": "gpu",
+    "name": "Peladin RTX3050 8GB",
+    "price_uzs": 2386500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-msi-rtx3050-ventus-2x-8gb",
+    "category": "gpu",
+    "name": "MSI RTX3050 VENTUS 2X 8GB",
+    "price_uzs": 2838000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-sapphire-rx7600-8gb-pulse",
+    "category": "gpu",
+    "name": "Sapphire RX7600 8GB PULSE",
+    "price_uzs": 3418500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx5050-8gb",
+    "category": "gpu",
+    "name": "Peladin RTX5050 8GB",
+    "price_uzs": 3741000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx3060-12gb",
+    "category": "gpu",
+    "name": "Peladin RTX3060 12GB",
+    "price_uzs": 3934500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx3070-8gb",
+    "category": "gpu",
+    "name": "Peladin RTX3070 8GB",
+    "price_uzs": 4515000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-peladin-rtx5060-8gb",
+    "category": "gpu",
+    "name": "Peladin RTX5060 8GB",
+    "price_uzs": 4515000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-msi-rtx5060-shadow-2x-8gb",
+    "category": "gpu",
+    "name": "MSI RTX5060 SHADOW 2X 8GB",
+    "price_uzs": 4837500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-zotac-rtx5060-twin-edge-8gb",
+    "category": "gpu",
+    "name": "Zotac RTX5060 TWIN EDGE 8GB",
+    "price_uzs": 4902000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-inno3d-rtx5060ti-twin-x2-8gb",
+    "category": "gpu",
+    "name": "Inno3D RTX5060Ti TWIN X2 8GB",
+    "price_uzs": 5289000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-msi-rtx5060ti-ventus-2x-oc-8gb",
+    "category": "gpu",
+    "name": "MSI RTX5060Ti VENTUS 2X OC 8GB",
+    "price_uzs": 5805000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-inno3d-rtx5060ti-16gb-twin-x2",
+    "category": "gpu",
+    "name": "Inno3D RTX5060Ti 16GB TWIN X2",
+    "price_uzs": 7224000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-msi-rtx5070-shadow-2x-oc-12gb",
+    "category": "gpu",
+    "name": "MSI RTX5070 SHADOW 2X OC 12GB",
+    "price_uzs": 8127000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-asus-rtx5070-dual-oc-12gb",
+    "category": "gpu",
+    "name": "ASUS RTX5070 DUAL OC 12GB",
+    "price_uzs": 9030000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-msi-rtx5070ti-ventus-3x-oc-16gb",
+    "category": "gpu",
+    "name": "MSI RTX5070Ti VENTUS 3X OC 16GB",
+    "price_uzs": 12900000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-palit-rtx5080-gamingpro-16gb",
+    "category": "gpu",
+    "name": "Palit RTX5080 GAMINGPRO 16GB",
+    "price_uzs": 17415000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "gpu-gigabyte-rx9060xt-gaming-oc-16gb",
+    "category": "gpu",
+    "name": "Gigabyte RX9060XT GAMING OC 16GB",
+    "price_uzs": 6321000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "tdp_watts": 150,
+    "length_mm": 250
+  },
+  {
+    "id": "ssd-ssd-128gb-sata",
+    "category": "ssd",
+    "name": "SSD 128Gb SATA",
+    "price_uzs": 335400,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 128,
+    "interface": "SATA"
+  },
+  {
+    "id": "ssd-ssd-256gb-sata",
+    "category": "ssd",
+    "name": "SSD 256Gb SATA",
+    "price_uzs": 464400,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 256,
+    "interface": "SATA"
+  },
+  {
+    "id": "ssd-ssd-512gb-sata",
+    "category": "ssd",
+    "name": "SSD 512Gb SATA",
+    "price_uzs": 709500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 512,
+    "interface": "SATA"
+  },
+  {
+    "id": "ssd-ssd-1tb-sata",
+    "category": "ssd",
+    "name": "SSD 1Tb SATA",
+    "price_uzs": 1548000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 1024,
+    "interface": "SATA"
+  },
+  {
+    "id": "ssd-ssd-nvme-256gb",
+    "category": "ssd",
+    "name": "SSD NVMe 256Gb",
+    "price_uzs": 580500,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 256,
+    "interface": "NVMe"
+  },
+  {
+    "id": "ssd-ssd-nvme-512gb",
+    "category": "ssd",
+    "name": "SSD NVMe 512Gb",
+    "price_uzs": 748200,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 512,
+    "interface": "NVMe"
+  },
+  {
+    "id": "ssd-ssd-nvme-1tb",
+    "category": "ssd",
+    "name": "SSD NVMe 1Tb",
+    "price_uzs": 1419000,
+    "image_url": "/products/gpu-default.svg",
+    "in_stock": true,
+    "size_gb": 1024,
+    "interface": "NVMe"
+  },
+  {
+    "id": "cooler-jungle-c20-pro",
+    "category": "cooler",
+    "name": "Jungle C20 Pro",
+    "price_uzs": 64500,
+    "image_url": "/products/cooler-jungle-c20-pro.png",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-grin-c40-pro",
+    "category": "cooler",
+    "name": "Grin C40 Pro",
+    "price_uzs": 90300,
+    "image_url": "/products/cooler-grin-c40-pro.png",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-deepcool-ak400",
+    "category": "cooler",
+    "name": "Deepcool AK400",
+    "price_uzs": 283800,
+    "image_url": "/products/cooler-deepcool-ak400.png",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-deepcool-ag620-g2",
+    "category": "cooler",
+    "name": "Deepcool AG620 G2",
+    "price_uzs": 412800,
+    "image_url": "/products/cooler-deepcool-ag620-g2.png",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-deepcool-le360-v2-suvli",
+    "category": "cooler",
+    "name": "Deepcool LE360 V2 (suvli)",
+    "price_uzs": 748200,
+    "image_url": "/products/cooler-deepcool-le360-v2.png",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-prism-360-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Frozen Prism 360 ARGB BK",
+    "price_uzs": 903000,
+    "image_url": "/products/tr_c1.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-prism-360-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Frozen Prism 360 ARGB WH",
+    "price_uzs": 903000,
+    "image_url": "/products/tr_c2.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-notte-360-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Frozen Notte 360 ARGB BK",
+    "price_uzs": 838500,
+    "image_url": "/products/tr_c3.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-notte-360-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Frozen Notte 360 ARGB WH",
+    "price_uzs": 838500,
+    "image_url": "/products/tr_c4.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-horizon-360-digital-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Frozen Horizon 360 DIGITAL ARGB BK",
+    "price_uzs": 967500,
+    "image_url": "/products/tr_c5.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-horizon-360-digital-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Frozen Horizon 360 DIGITAL ARGB WH",
+    "price_uzs": 967500,
+    "image_url": "/products/tr_c6.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-warframe-360-rb-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Frozen Warframe 360 RB ARGB BK",
+    "price_uzs": 1225500,
+    "image_url": "/products/tr_c7.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-warframe-360-bw-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Frozen Warframe 360 BW ARGB WH",
+    "price_uzs": 1225500,
+    "image_url": "/products/tr_c8.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-infinity-360-argb-bk-oem",
+    "category": "cooler",
+    "name": "Thermalright Frozen Infinity 360 ARGB BK (oem)",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_c29.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-aqua-elite-360-argb-v3-bk-oem",
+    "category": "cooler",
+    "name": "Thermalright Aqua Elite 360 ARGB v3 BK (oem)",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_c30.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-aqua-elite-360-argb-v3-wh-oem",
+    "category": "cooler",
+    "name": "Thermalright Aqua Elite 360 ARGB v3 WH (oem)",
+    "price_uzs": 774000,
+    "image_url": "/products/tr_c31.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-warframe-360-argb-bk-oem",
+    "category": "cooler",
+    "name": "Thermalright Frozen Warframe 360 ARGB BK (oem)",
+    "price_uzs": 1032000,
+    "image_url": "/products/tr_c32.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-frozen-warframe-360-argb-wh-oem",
+    "category": "cooler",
+    "name": "Thermalright Frozen Warframe 360 ARGB WH (oem)",
+    "price_uzs": 1096500,
+    "image_url": "/products/tr_c33.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "liquid"
+  },
+  {
+    "id": "cooler-thermalright-assasin-x-120-r-digital-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Assasin X 120 R Digital ARGB BK",
+    "price_uzs": 283800,
+    "image_url": "/products/tr_c34.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-assasin-x-120-r-digital-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Assasin X 120 R Digital ARGB WH",
+    "price_uzs": 283800,
+    "image_url": "/products/tr_c35.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-120-se-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 120 SE ARGB BK",
+    "price_uzs": 516000,
+    "image_url": "/products/tr_c36.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-120-se-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 120 SE ARGB WH",
+    "price_uzs": 516000,
+    "image_url": "/products/tr_c37.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-120-vision-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 120 VISION ARGB BK",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_c38.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-phantom-spirit-120-evo-bk",
+    "category": "cooler",
+    "name": "Thermalright Phantom Spirit 120 EVO BK",
+    "price_uzs": 774000,
+    "image_url": "/products/tr_c39.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-phantom-spirit-120-digital-evo-bk",
+    "category": "cooler",
+    "name": "Thermalright Phantom Spirit 120 DIGITAL EVO BK",
+    "price_uzs": 838500,
+    "image_url": "/products/tr_c40.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-burst-assasin-120-vision-bk",
+    "category": "cooler",
+    "name": "Thermalright Burst Assasin 120 Vision BK",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_c41.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-burst-assasin-120-vision-wh",
+    "category": "cooler",
+    "name": "Thermalright Burst Assasin 120 Vision WH",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_c42.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-120-digital-argb-bk",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 120 DIGITAL ARGB BK",
+    "price_uzs": 838500,
+    "image_url": "/products/tr_c43.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-120-digital-argb-wh",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 120 DIGITAL ARGB WH",
+    "price_uzs": 903000,
+    "image_url": "/products/tr_c44.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-140-digital-bk",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 140 DIGITAL BK",
+    "price_uzs": 967500,
+    "image_url": "/products/tr_c45.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "cooler-thermalright-peerless-assasin-140-digital-wh",
+    "category": "cooler",
+    "name": "Thermalright Peerless Assasin 140 DIGITAL WH",
+    "price_uzs": 1032000,
+    "image_url": "/products/tr_c46.jpeg",
+    "in_stock": true,
+    "supported_sockets": [
+      "LGA1700",
+      "LGA1851",
+      "AM4",
+      "AM5"
+    ],
+    "type": "air"
+  },
+  {
+    "id": "psu-xpower-550w-80",
+    "category": "psu",
+    "name": "Xpower 550w 80+",
+    "price_uzs": 322500,
+    "image_url": "/products/psu-xpower-550w.png",
+    "in_stock": true,
+    "wattage": 550,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-grin-kp-600w-80",
+    "category": "psu",
+    "name": "Grin KP 600W 80+",
+    "price_uzs": 387000,
+    "image_url": "/products/psu-grin-kp-600w.png",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-deepcool-pf650-650w-80",
+    "category": "psu",
+    "name": "Deepcool PF650 650W 80+",
+    "price_uzs": 503100,
+    "image_url": "/products/psu-deepcool-pf650.png",
+    "in_stock": true,
+    "wattage": 650,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-deepcool-pf750-750w-80",
+    "category": "psu",
+    "name": "Deepcool PF750 750W 80+",
+    "price_uzs": 567600,
+    "image_url": "/products/psu-deepcool-pf750.png",
+    "in_stock": true,
+    "wattage": 750,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-deepcool-pk650d-650w-bronze",
+    "category": "psu",
+    "name": "Deepcool PK650D 650W Bronze",
+    "price_uzs": 670800,
+    "image_url": "/products/psu-deepcool-pk650d.png",
+    "in_stock": true,
+    "wattage": 650,
+    "certification": "80+ Bronze"
+  },
+  {
+    "id": "psu-deepcool-pn750d-750w-gold",
+    "category": "psu",
+    "name": "Deepcool PN750D 750W Gold",
+    "price_uzs": 980400,
+    "image_url": "/products/psu-deepcool-pn750d.png",
+    "in_stock": true,
+    "wattage": 750,
+    "certification": "80+ Gold"
+  },
+  {
+    "id": "psu-deepcool-pq850g-850w-gold",
+    "category": "psu",
+    "name": "Deepcool PQ850G 850W Gold",
+    "price_uzs": 1135200,
+    "image_url": "/products/psu-deepcool-pq850g.png",
+    "in_stock": true,
+    "wattage": 850,
+    "certification": "80+ Gold"
+  },
+  {
+    "id": "psu-deepcool-pn1000d-1000w-gold",
+    "category": "psu",
+    "name": "Deepcool PN1000D 1000W Gold",
+    "price_uzs": 1290000,
+    "image_url": "/products/psu-deepcool-pn1000d.png",
+    "in_stock": true,
+    "wattage": 1000,
+    "certification": "80+ Gold"
+  },
+  {
+    "id": "psu-thermalright-tr-tb650s",
+    "category": "psu",
+    "name": "Thermalright TR-TB650S",
+    "price_uzs": 645000,
+    "image_url": "/products/tr_p1.jpeg",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-thermalright-tr-tb750s",
+    "category": "psu",
+    "name": "Thermalright TR-TB750S",
+    "price_uzs": 709500,
+    "image_url": "/products/tr_p2.jpeg",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-thermalright-tr-tb850s",
+    "category": "psu",
+    "name": "Thermalright TR-TB850S",
+    "price_uzs": 838500,
+    "image_url": "/products/tr_p3.jpeg",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-thermalright-tr-kg650",
+    "category": "psu",
+    "name": "Thermalright TR-KG650",
+    "price_uzs": 774000,
+    "image_url": "/products/tr_p4.jpeg",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-thermalright-tr-kg750",
+    "category": "psu",
+    "name": "Thermalright TR-KG750",
+    "price_uzs": 903000,
+    "image_url": "/products/tr_p5.jpeg",
+    "in_stock": true,
+    "wattage": 600,
+    "certification": "80+"
+  },
+  {
+    "id": "psu-thermalright-tr-kg750w",
+    "category": "psu",
+    "name": "Thermalright TR-KG750W",
+    "price_uzs": 967500,
+    "image_url": "/products/tr_p6.jpeg",
+    "in_stock": true,
+    "wattage": 750,
+    "certification": "80+"
+  },
+  {
+    "id": "case-texno-gaming",
+    "name": "Texno Gaming RGB Case",
+    "price_uzs": 600000,
+    "image_url": "/products/case-texno-gaming.png",
+    "category": "case",
+    "in_stock": true,
+    "form_factor": "ATX",
+    "supported_form_factors": [
+      "ATX",
+      "mATX",
+      "ITX"
+    ],
+    "max_gpu_length_mm": 400
+  },
+  {
+    "id": "case-mypro-mg13tg",
+    "name": "MYPRO MG13TG Black",
+    "price_uzs": 353000,
+    "image_url": "/products/case-mypro-mg13tg.png",
+    "category": "case",
+    "in_stock": true,
+    "form_factor": "ATX",
+    "supported_form_factors": [
+      "ATX",
+      "mATX",
+      "ITX"
+    ],
+    "max_gpu_length_mm": 400
+  },
+  {
+    "id": "case-mypro-nova-white",
+    "name": "MYPRO Nova Lite White",
+    "price_uzs": 328000,
+    "image_url": "/products/case-mypro-nova-white.png",
+    "category": "case",
+    "in_stock": true,
+    "form_factor": "ATX",
+    "supported_form_factors": [
+      "ATX",
+      "mATX",
+      "ITX"
+    ],
+    "max_gpu_length_mm": 400
+  },
+  {
+    "id": "case-mypro-nova-black",
+    "name": "MYPRO Nova Lite Black",
+    "price_uzs": 326000,
+    "image_url": "/products/case-mypro-nova-black.png",
+    "category": "case",
+    "in_stock": true,
+    "form_factor": "ATX",
+    "supported_form_factors": [
+      "ATX",
+      "mATX",
+      "ITX"
+    ],
+    "max_gpu_length_mm": 400
+  },
+  {
+    "id": "monitor-ziffler-24-bk",
+    "name": "Ziffler 24\" 144Hz Black",
+    "price_uzs": 838500,
+    "image_url": "/products/monitor-ziffler.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-ziffler-24-wh",
+    "name": "Ziffler 24\" 144Hz White",
+    "price_uzs": 838500,
+    "image_url": "/products/monitor-mypro-ips.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-ziffler-27",
+    "name": "Ziffler 27\" 120Hz IPS",
+    "price_uzs": 1070700,
+    "image_url": "/products/monitor-ziffler.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-everel-27",
+    "name": "Everel Monitor 27\" 200Hz",
+    "price_uzs": 1419000,
+    "image_url": "/products/monitor-grin-gaming.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-ziffler-rgb-27",
+    "name": "Ziffler 27\" 300Hz RGB Gaming",
+    "price_uzs": 1806000,
+    "image_url": "/products/monitor-ziffler-rgb.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-lenovo-legion",
+    "name": "Lenovo Legion 25\" 320Hz",
+    "price_uzs": 1870500,
+    "image_url": "/products/monitor-lenovo-legion.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-msi-mag-25",
+    "name": "MSI MAG 25\" 300Hz",
+    "price_uzs": 1870500,
+    "image_url": "/products/monitor-msi-mag.png",
+    "category": "monitor",
+    "in_stock": true
+  },
+  {
+    "id": "monitor-aoc-27-curved",
+    "name": "AOC 27\" 300Hz Curved",
+    "price_uzs": 2322000,
+    "image_url": "/products/monitor-aoc-curved.png",
+    "category": "monitor",
+    "in_stock": true
+  }
+]

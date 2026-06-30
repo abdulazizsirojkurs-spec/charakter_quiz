@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.DS_Store
+temp_excel/
+temp_site.html
+test.png
+*.xlsx
+*.csv
+*.docx
+.vercel/

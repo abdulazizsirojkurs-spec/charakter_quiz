@@ -1,0 +1,255 @@
+﻿Kategoriya,Mahsulot nomi,Mahsulot narxi,Maxsulot rasmi
+cpu,Intel Core i3-12100F,96,
+cpu,Intel Core i3-14100F,106,
+cpu,Intel Core i3-14100,130,
+cpu,Intel Core i5-12400F,137,
+cpu,Intel Core i5-13400F,157,
+cpu,Intel Core i5-14400F,159,
+cpu,Intel Core i5-14600KF,236,
+cpu,Intel Core i7-13700F,300,
+cpu,Intel Core i7-14700F,310,
+cpu,Intel Core i7-14700KF,332,
+cpu,Intel Core i9-14900KF,440,
+cpu,Intel Core Ultra 5-225F,130,
+cpu,Intel Core Ultra 5-245KF,182,
+cpu,Intel Core Ultra 7-265KF,285,
+cpu,Intel Core Ultra 9-285K,600,
+cpu,AMD Ryzen 5 5500,90,
+cpu,AMD Ryzen 5 5600,125,
+cpu,AMD Ryzen 5 5600X,135,
+cpu,AMD Ryzen 7 5700X,145,
+cpu,AMD Ryzen 5 7500F,125,
+cpu,AMD Ryzen 5 7600X,172,
+cpu,AMD Ryzen 7 7700X,233,
+cpu,AMD Ryzen 7 7800X3D,305,
+cpu,AMD Ryzen 5 9600X,190,
+cpu,AMD Ryzen 7 9800X3D,425,
+cpu,AMD Ryzen 9 9900X,375,
+cpu,AMD Ryzen 9 9950X3D,645,
+mb,Maxsun H610M-H V1 DDR4,48,
+mb,Gigabyte H610M K DDR4,56,
+mb,MSI PRO H610M-E DDR5,65,
+mb,Maxsun B760M-F DDR4,73,
+mb,MSI PRO B760M-E DDR4,73,
+mb,Maxsun B760M-N D5 V2 DDR5,75,
+mb,MSI PRO B760M-P DDR5,98,
+mb,Gigabyte B760M DS3H GEN5 DDR5,108,
+mb,MSI PRO B760M-A WIFI DDR5,135,
+mb,Gigabyte Z790D DDR5,180,
+mb,Gigabyte B860M GAMING WIFI6 DDR5,175,
+mb,MSI B860M GAMING PLUS WIFI DDR5,215,
+mb,ASUS ROG STRIX B860-A GAMING WIFI DDR5,280,
+mb,MSI MAG Z890 TOMAHAWK WIFI DDR5,360,
+mb,Gigabyte B550M GAMING X WIFI6 DDR4,125,
+mb,ASUS ROG STRIX B550-A DDR4,170,
+mb,Maxsun B650M I-CAFE DDR5,103,
+mb,MSI PRO B650M-P DDR5,110,
+mb,MSI PRO B840M-B DDR5,95,
+mb,Maxsun B850M-K WIFI DDR5,98,
+mb,Gigabyte B850M FORCE DDR5,165,
+mb,MSI B850 GAMING PLUS WIFI6E DDR5,200,
+mb,MSI MAG B850 TOMAHAWK MAX WIFI DDR5,265,
+ram,Dahua DDR4 8GB 3200MHz,50,
+ram,Crucial DDR4 8GB 3200MHz,53,
+ram,Patriot DDR4 16GB 3200MHz,98,
+ram,Lexar DDR4 16GB 3200MHz,110,
+ram,Kingston DDR4 16GB 3200MHz (8*2) RGB,138,
+ram,Kingston DDR4 32GB 3600MHz RGB,192,
+ram,Apacer DDR5 16GB 5600MHz,170,
+ram,Patriot DDR5 16GB 6000MHz,170,
+ram,Kingston DDR5 16GB 5600MHz,175,
+ram,Adata DDR5 32GB 5600MHz,315,
+ram,Kingston DDR5 32GB 6000MHz (16*2) RGB,420,
+ram,Kingston DDR5 64GB 6000MHz (32*2) RGB,840,
+gpu,Axle GT730 4GB DDR3,45,
+gpu,Peladin RX580 8GB,112,
+gpu,Peladin GTX1650 4GB,140,
+gpu,Peladin GTX1660 Super 6GB,165,
+gpu,Peladin RTX3050 8GB,185,
+gpu,MSI RTX3050 VENTUS 2X 8GB,220,
+gpu,Sapphire RX7600 8GB PULSE,265,
+gpu,Peladin RTX5050 8GB,290,
+gpu,Peladin RTX3060 12GB,305,
+gpu,Peladin RTX5060 8GB,350,
+gpu,MSI RTX5060 SHADOW 2X 8GB,375,
+gpu,Zotac RTX5060 TWIN EDGE 8GB,380,
+gpu,Inno3D RTX5060Ti TWIN X2 8GB,410,
+gpu,MSI RTX5060Ti VENTUS 2X OC 8GB,450,
+gpu,Inno3D RTX5060Ti 16GB TWIN X2,560,
+gpu,MSI RTX5070 SHADOW 2X OC 12GB,630,
+gpu,ASUS RTX5070 DUAL OC 12GB,700,
+gpu,MSI RTX5070Ti VENTUS 3X OC 16GB,1000,
+gpu,Palit RTX5080 GAMINGPRO 16GB,1350,
+gpu,Gigabyte RX9060XT GAMING OC 16GB,490,
+gpu,Sapphire RX9070 PULSE 16GB,730,
+gpu,Sapphire RX9070XT NITRO+ 16GB,880,
+storage,SSD Apacer 128GB SATA,27,
+storage,SSD M.2 Hiksemi 256GB NVMe,45,
+storage,SSD Lexar 256GB SATA,50,
+storage,SSD M.2 AGI 512GB NVMe,68,
+storage,SSD M.2 Lexar 512GB NVMe,80,
+storage,SSD M.2 Netac 1TB NVMe,128,
+storage,SSD M.2 Kingston 1TB NVMe NV3,142,
+storage,SSD M.2 Samsung 1TB 990 PRO,215,
+storage,SSD M.2 Samsung 2TB 990 EVO Plus,275,
+storage,HDD 1TB Toshiba 5700Rpm,78,
+storage,HDD 2TB Toshiba 5400Rpm,105,
+cooler,Deepcool CK-11508,3.5,
+cooler,ID Cooling SE-903-XT FRGB,11,
+cooler,ID Cooling SE-214-XT ARGB,16,
+cooler,Deepcool AK400,22,
+cooler,ID Cooling FROZN A410 DK,24,
+cooler,Deepcool AG620 G2,32,
+cooler,Deepcool AK620,53,
+cooler,ID Cooling FX360 PRO (suvli),51,
+cooler,Deepcool LE360 V2 (suvli),58,
+cooler,Deepcool LS720 (suvli),115,
+cooler,Deepcool MYSTIQUE 360 (suvli),135,
+cooler,Thermalright Frozen Prism 360 ARGB BK,70.0,tr_c1.jpeg
+cooler,Thermalright Frozen Prism 360 ARGB WH,70.0,tr_c2.jpeg
+cooler,Thermalright Frozen Notte 360 ARGB BK,65.0,tr_c3.jpeg
+cooler,Thermalright Frozen Notte 360 ARGB WH,65.0,tr_c4.jpeg
+cooler,Thermalright Frozen Horizon 360 DIGITAL ARGB BK,75.0,tr_c5.jpeg
+cooler,Thermalright Frozen Horizon 360 DIGITAL ARGB WH,75.0,tr_c6.jpeg
+cooler,Thermalright Frozen Warframe 360 RB ARGB BK,95.0,tr_c7.jpeg
+cooler,Thermalright Frozen Warframe 360 BW ARGB WH,95.0,tr_c8.jpeg
+cooler,Thermalright Frozen Warframe Pro 360 ARGB BK,105.0,tr_c9.jpeg
+cooler,Thermalright Frozen Warframe Pro 360 ARGB WH,105.0,tr_c10.jpeg
+cooler,Thermalright Peerless Vision 360 ARGB BK,110.0,tr_c11.jpeg
+cooler,Thermalright Peerless Vision 360 ARGB WH,110.0,tr_c12.jpeg
+cooler,Thermalright Peerless Vision 360 UB ARGB BK,120.0,tr_c13.jpeg
+cooler,Thermalright Peerless Vision 360 UB ARGB WH,120.0,tr_c14.jpeg
+cooler,Thermalright Frozen Vision 360 ARGB V2 BK,130.0,tr_c15.jpeg
+cooler,Thermalright Frozen Vision 360 ARGB V2 WH,130.0,tr_c16.jpeg
+cooler,Thermalright Stream Vision 360 BK,140.0,tr_c17.jpeg
+cooler,Thermalright Stream Vision 360 WH,140.0,tr_c18.jpeg
+cooler,Thermalright Grand Vision 360 ARGB BK,145.0,tr_c19.jpeg
+cooler,Thermalright Grand Vision 360 ARGB WH,145.0,tr_c20.jpeg
+cooler,Thermalright Hyper Vision 360 UB ARGB BK,170.0,tr_c21.jpeg
+cooler,Thermalright Hyper Vision 360 UB ARGB BK,170.0,tr_c22.jpeg
+cooler,Thermalright Trofeo Vision 360  ARGB BK,160.0,tr_c23.jpeg
+cooler,Thermalright Trofeo Vision 360  ARGB WH,160.0,tr_c24.jpeg
+cooler,Thermalright Wonder Vision 360 UB  ARGB BK,230.0,tr_c25.jpeg
+cooler,Thermalright Wonder Vision 360 UB  ARGB BK,230.0,tr_c26.jpeg
+cooler,Thermalright Rainbow Vision 360 TURBO ARGB BK,260.0,tr_c27.jpeg
+cooler,Thermalright Rainbow Vision 360 TURBO ARGB BK,260.0,tr_c28.jpeg
+cooler,Thermalright Frozen Infinity 360 ARGB BK (oem),55.0,tr_c29.jpeg
+cooler,Thermalright Aqua Elite 360 ARGB v3 BK (oem),55.0,tr_c30.jpeg
+cooler,Thermalright Aqua Elite 360 ARGB v3 WH (oem),60.0,tr_c31.jpeg
+cooler,Thermalright Frozen Warframe 360 ARGB BK (oem),80.0,tr_c32.jpeg
+cooler,Thermalright Frozen Warframe 360 ARGB WH (oem),85.0,tr_c33.jpeg
+cooler,Thermalright Assasin X 120 R Digital ARGB BK,22.0,tr_c34.jpeg
+cooler,Thermalright Assasin X 120 R Digital ARGB WH,22.0,tr_c35.jpeg
+cooler,Thermalright Peerless Assasin 120 SE ARGB BK,40.0,tr_c36.jpeg
+cooler,Thermalright Peerless Assasin 120 SE ARGB WH,40.0,tr_c37.jpeg
+cooler,Thermalright Peerless Assasin 120 VISION ARGB BK,55.0,tr_c38.jpeg
+cooler,Thermalright Phantom Spirit 120 EVO BK,60.0,tr_c39.jpeg
+cooler,Thermalright Phantom Spirit 120 DIGITAL EVO BK,65.0,tr_c40.jpeg
+cooler,Thermalright Burst Assasin 120 Vision BK,55.0,tr_c41.jpeg
+cooler,Thermalright Burst Assasin 120 Vision WH,55.0,tr_c42.jpeg
+cooler,Thermalright Peerless Assasin 120 DIGITAL ARGB BK,65.0,tr_c43.jpeg
+cooler,Thermalright Peerless Assasin 120 DIGITAL ARGB WH,70.0,tr_c44.jpeg
+cooler,Thermalright Peerless Assasin 140 DIGITAL BK,75.0,tr_c45.jpeg
+cooler,Thermalright Peerless Assasin 140 DIGITAL WH,80.0,tr_c46.jpeg
+cooler,Thermalright TL-M12-S BK,6.0,tr_c47.jpeg
+cooler,Thermalright TL-M12W-S WH,6.0,tr_c48.jpeg
+cooler,Thermalright TL-M12R-S BK (REVERSE),6.0,tr_c49.jpeg
+cooler,Thermalright TL-M12RW-S WH  (REVERSE),0,tr_c50.jpeg
+cooler,Thermalright TL-S12 BK,7.0,tr_c51.jpeg
+cooler,Thermalright TL-S12R BK,7.0,tr_c52.jpeg
+cooler,Thermalright TL-S12-W WH,7.0,tr_c53.jpeg
+cooler,Thermalright TL-K12 BK,20.0,tr_c54.jpeg
+cooler,Thermalright TL-K12R BK,20.0,tr_c55.jpeg
+cooler,Thermalright TL-K12W WH,20.0,tr_c56.jpeg
+cooler,Thermalright TL-K12RW WH,20.0,tr_c57.jpeg
+cooler,Thermalright TL-UB36R BK,30.0,tr_c58.jpeg
+cooler,Thermalright TL-UB36RW WH,30.0,tr_c59.jpeg
+cooler,Thermalright TL-B12015 EXTREM,25.0,tr_c60.jpeg
+cooler,Thermalright TL-M10-C VISION ARGB BK,110.0,tr_c61.jpeg
+cooler,Thermalright TL-M10-M VISION ARGB BK,110.0,tr_c62.jpeg
+cooler,Thermalright TL-M10-C VISION ARGB WH,110.0,tr_c63.jpeg
+cooler,Thermalright Trofeo Vision LCD BK 6.86`,45.0,tr_c64.jpeg
+cooler,Thermalright Trofeo Vision LCD WH 6.86`,45.0,tr_c65.jpeg
+cooler,Thermalright Trofeo Vision LCD BK 9.16`,50.0,tr_c66.jpeg
+cooler,Thermalright Trofeo Vision LCD WH 9.16`,50.0,tr_c67.jpeg
+cooler,Thermalright 5V ARGB CONTROLLER SATA,8.0,tr_c68.jpeg
+cooler,Thermalright FAN HUB X12 IR BLACK,15.0,tr_c69.jpeg
+psu,Deepcool DE600 V2 450W,25,
+psu,Deepcool PF450 450W 80+,24,
+psu,Deepcool PF550 550W 80+,33,
+psu,Deepcool GamerStorm PF600X 600W Bronze,36,
+psu,Deepcool PF650 650W 80+,39,
+psu,Deepcool PF750 750W 80+,44,
+psu,Deepcool PK650D 650W Bronze,52,
+psu,Deepcool PN750D 750W Gold,76,
+psu,Deepcool PQ850G 850W Gold,88,
+psu,Deepcool PN1000D 1000W Gold,100,
+psu,Montech Century II 1050W Gold,116,
+psu,Deepcool PQ1200G 1200W Gold,130,
+psu,Thermalright TR-TB650S,50.0,tr_p1.jpeg
+psu,Thermalright TR-TB750S,55.0,tr_p2.jpeg
+psu,Thermalright TR-TB850S,65.0,tr_p3.jpeg
+psu,Thermalright TR-KG650,60.0,tr_p4.jpeg
+psu,Thermalright TR-KG750,70.0,tr_p5.jpeg
+psu,Thermalright TR-KG750W,75.0,tr_p6.jpeg
+psu,Thermalright TR-KG850,90.0,tr_p7.jpeg
+psu,Thermalright TR-KG850W,95.0,tr_p8.jpeg
+psu,Thermalright TR-SG650S,60.0,tr_p9.jpeg
+psu,Thermalright TR-SG650-W,65.0,tr_p10.jpeg
+psu,Thermalright TR-SG850S,100.0,tr_p11.jpeg
+psu,Thermalright TR-SG850-W,105.0,tr_p12.jpeg
+psu,Thermalright TR-SG1000,125.0,tr_p13.jpeg
+psu,Thermalright TR-SG1000-W,130.0,tr_p14.jpeg
+psu,Thermalright TR-TG1200,150.0,tr_p15.jpeg
+psu,Thermalright TR-TG1200-W,160.0,tr_p16.jpeg
+psu,Thermalright TR-SP850,110.0,tr_p17.jpeg
+psu,Thermalright TR-SP850-W,115.0,tr_p18.jpeg
+psu,Thermalright TR-SP1000,150.0,tr_p19.jpeg
+psu,Thermalright TR-SP1000-W,160.0,tr_p20.jpeg
+psu,Thermalright TR-TP1350,350.0,tr_p21.jpeg
+psu,Thermalright TR-TP1650,500.0,tr_p22.jpeg
+psu,Thermalright TR-SGFX650-W,100.0,tr_p23.jpeg
+psu,Thermalright TR-SGFX850,120.0,tr_p24.jpeg
+case,MYPRO Nova Light black,25.0,ig_1.jpg
+case,MYPRO Nova Light WHITE,26.0,ig_2.jpg
+case,MYPRO Aura black,25.0,ig_3.jpg
+case,MYPRO Aura Pro black,35.0,ig_4.jpg
+case,Alfatech S77 4xf Black,27.0,ig_5.jpg
+case,Alfatech A70 4xf Black,27.0,ig_6.jpg
+case,MYPRO Aura Pro white,36.0,ig_7.jpg
+case,ProGaming Infinity,70.0,ig_8.jpg
+case,MYPRO Aura white,26.0,ig_9.jpg
+case,Azza mini aqua 4x,32.0,ig_10.jpg
+case,Montech Xr white 3x,55.0,ig_11.jpg
+case,Einarex S700 4xf Black,65.0,ig_12.jpg
+case,Einarex S700 4xf White,65.0,ig_13.jpg
+case,Einarex S800 4x Black,75.0,ig_14.jpg
+case,Einarex S800 4x White,75.0,ig_15.jpg
+case,Alfatech A70 4xf White,27.0,ig_16.jpg
+case,WECAN ATX GLASS WG06 BLACK,45.0,ig_17.jpg
+case,WECAN ATX GLASS WG05 BLACK,55.0,ig_18.jpg
+case,ACER AQUA V950 BLACK no cooler,70.0,ig_19.jpg
+case,ACER ULTRA+ AQUA V333R BLACK no cooler,90.0,ig_20.jpg
+case,Xtech case AQUARIUM X08 Black,27.0,xtech_x08.jpg
+case,Xtech Fan4 R25,27.0,xtech_r25.jpg
+case,Xtech case AQUARIUM,27.0,xtech_aqua.jpg
+monitor,Hilook 22\,68,
+monitor,Hilook 24\,78,
+monitor,Acer EK220Q 22\,80,
+monitor,AOC 24G2SE 24\,98,
+monitor,MSI G255F 25\,115,
+monitor,AOC 24G4 24\,118,
+monitor,MSI G2412F 24\,120,
+monitor,Gigabyte G24F2 24\,125,
+monitor,ASUS VG249Q3A 24\,135,
+monitor,MSI G274F 27\,140,
+monitor,Gigabyte G27F2 27\,145,
+monitor,AOC 27G4 27\,148,
+monitor,MSI G274QPF 27\,195,
+monitor,Gigabyte M27Q 27\,210,
+monitor,ASUS VG27AQ1A 27\,230,
+monitor,MSI MAG 274QRF 27\,265,
+monitor,LG 27GP850-B 27\,290,
+monitor,Samsung Odyssey G5 27\,220,
+monitor,MSI MAG 275CQRF 27\,250,
+monitor,LG 27GS60QC 27\,200,

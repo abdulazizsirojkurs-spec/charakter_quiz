@@ -1,0 +1,297 @@
+[
+  {
+    "id": "plat-amd",
+    "category": "platform",
+    "name": "AMD Platforma",
+    "price_uzs": 0,
+    "image_url": "/products/cpu-amd.png",
+    "in_stock": true,
+    "platform_code": "AMD",
+    "display_order": 1
+  },
+  {
+    "id": "plat-intel",
+    "category": "platform",
+    "name": "Intel Platforma",
+    "price_uzs": 0,
+    "image_url": "/products/cpu-intel.png",
+    "in_stock": true,
+    "platform_code": "Intel",
+    "display_order": 2
+  },
+  {
+    "id": "cpu-r5-7600",
+    "category": "cpu",
+    "name": "AMD Ryzen 5 7600",
+    "price_uzs": 2800000,
+    "image_url": "/products/cpu-amd.svg",
+    "in_stock": true,
+    "platform": "AMD",
+    "socket": "AM5",
+    "tdp_watts": 65,
+    "cores": 6
+  },
+  {
+    "id": "cpu-i5-13400f",
+    "category": "cpu",
+    "name": "Intel Core i5-13400F",
+    "price_uzs": 2900000,
+    "image_url": "/mock/cpu.png",
+    "in_stock": true,
+    "platform": "Intel",
+    "socket": "LGA1700",
+    "tdp_watts": 65,
+    "cores": 10
+  },
+  {
+    "id": "mb-b650m",
+    "category": "motherboard",
+    "name": "MSI PRO B650M-P",
+    "price_uzs": 1600000,
+    "image_url": "/mock/mb.png",
+    "in_stock": true,
+    "socket": "AM5",
+    "ddr_type": "DDR5",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "mb-b760m",
+    "category": "motherboard",
+    "name": "ASUS PRIME B760M-K",
+    "price_uzs": 1500000,
+    "image_url": "/mock/mb.png",
+    "in_stock": true,
+    "socket": "LGA1700",
+    "ddr_type": "DDR4",
+    "form_factor": "mATX"
+  },
+  {
+    "id": "ram-16-ddr5",
+    "category": "ram",
+    "name": "Kingston FURY 16GB DDR5 5600MHz",
+    "price_uzs": 850000,
+    "image_url": "/mock/ram.png",
+    "in_stock": true,
+    "ddr_type": "DDR5",
+    "size_gb": 16
+  },
+  {
+    "id": "ram-16-ddr4",
+    "category": "ram",
+    "name": "Lexar Thor 16GB DDR4 3200MHz",
+    "price_uzs": 550000,
+    "image_url": "/mock/ram.png",
+    "in_stock": true,
+    "ddr_type": "DDR4",
+    "size_gb": 16
+  },
+  {
+    "id": "gpu-4060",
+    "category": "gpu",
+    "name": "Palit GeForce RTX 4060 Dual 8GB",
+    "price_uzs": 4200000,
+    "image_url": "/mock/gpu.png",
+    "in_stock": true,
+    "tdp_watts": 115,
+    "length_mm": 250
+  },
+  {
+    "id": "ssd-1tb",
+    "category": "ssd",
+    "name": "Kingston NV2 1TB M.2 NVMe",
+    "price_uzs": 850000,
+    "image_url": "/mock/ssd.png",
+    "in_stock": true,
+    "size_gb": 1000,
+    "interface": "NVMe"
+  },
+  {
+    "id": "psu-650w",
+    "category": "psu",
+    "name": "DeepCool PK650D 650W 80+ Bronze",
+    "price_uzs": 650000,
+    "image_url": "/mock/psu.png",
+    "in_stock": true,
+    "wattage": 650,
+    "certification": "Bronze"
+  },
+  {
+    "id": "cooler-ag400",
+    "category": "cooler",
+    "name": "DeepCool AG400 LED",
+    "price_uzs": 280000,
+    "image_url": "/mock/cooler.png",
+    "in_stock": true,
+    "supported_sockets": ["AM4", "AM5", "LGA1200", "LGA1700"],
+    "type": "Air"
+  },
+  {
+    "id": "case-gaming",
+    "category": "case",
+    "name": "Texno Gaming RGB Case",
+    "price_uzs": 600000,
+    "image_url": "/mock/case.png",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "mon-24-180",
+    "category": "monitor",
+    "name": "AOC 24G4X 24\" 180Hz IPS",
+    "price_uzs": 1800000,
+    "image_url": "/mock/monitor.png",
+    "in_stock": true,
+    "size_inch": 24,
+    "refresh_hz": 180,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "case-mypro-mg13tg",
+    "category": "case",
+    "name": "MYPRO MG13TG Black",
+    "price_uzs": 353000,
+    "image_url": "/products/mypro-mg13tg.png",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "case-mypro-nova-lite-white",
+    "category": "case",
+    "name": "MYPRO Nova Lite White",
+    "price_uzs": 328000,
+    "image_url": "/products/case-default.svg",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "case-mypro-nova-lite-black",
+    "category": "case",
+    "name": "MYPRO Nova Lite Black",
+    "price_uzs": 328000,
+    "image_url": "/products/case-default.svg",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "case-mypro-aura-pro-black",
+    "category": "case",
+    "name": "MYPRO Aura Pro Black",
+    "price_uzs": 441000,
+    "image_url": "/products/mypro-aura-pro-black.png",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "case-mypro-aura-pro-white",
+    "category": "case",
+    "name": "MYPRO Aura Pro White",
+    "price_uzs": 441000,
+    "image_url": "/products/mypro-aura-pro-white.png",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "case-xtech-x08-aquarium",
+    "category": "case",
+    "name": "Xtech X08 Aquarium",
+    "price_uzs": 340000,
+    "image_url": "/products/xtech-x08-aquarium.png",
+    "in_stock": true,
+    "supported_form_factors": ["ATX", "mATX", "ITX"],
+    "max_gpu_length_mm": 330
+  },
+  {
+    "id": "mon-ziffler-24-144",
+    "category": "monitor",
+    "name": "Ziffler 24\" 144Hz",
+    "price_uzs": 819000,
+    "image_url": "/products/ziffler-24-144.png",
+    "in_stock": true,
+    "size_inch": 24,
+    "refresh_hz": 144,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-ziffler-24-144-black",
+    "category": "monitor",
+    "name": "Ziffler 24\" 144Hz Black",
+    "price_uzs": 819000,
+    "image_url": "/products/ziffler-24-144-black.png",
+    "in_stock": true,
+    "size_inch": 24,
+    "refresh_hz": 144,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-eveler-34-165",
+    "category": "monitor",
+    "name": "Eveler 34\" 165Hz",
+    "price_uzs": 2142000,
+    "image_url": "/products/eveler-34-165.png",
+    "in_stock": true,
+    "size_inch": 34,
+    "refresh_hz": 165,
+    "resolution": "3440x1440"
+  },
+  {
+    "id": "mon-everel-27-200",
+    "category": "monitor",
+    "name": "Everel 27\" 200Hz",
+    "price_uzs": 1386000,
+    "image_url": "/products/everel-27-200.png",
+    "in_stock": true,
+    "size_inch": 27,
+    "refresh_hz": 200,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-ziffler-27-300",
+    "category": "monitor",
+    "name": "Ziffler 27\" 300Hz",
+    "price_uzs": 1764000,
+    "image_url": "/products/ziffler-27-300.png",
+    "in_stock": true,
+    "size_inch": 27,
+    "refresh_hz": 300,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-lenovo-legion-25-320",
+    "category": "monitor",
+    "name": "Lenovo Legion 25\" 320Hz",
+    "price_uzs": 1827000,
+    "image_url": "/products/lenovo-legion-25-320.png",
+    "in_stock": true,
+    "size_inch": 25,
+    "refresh_hz": 320,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-msi-245-300",
+    "category": "monitor",
+    "name": "MSI 24.5\" 300Hz",
+    "price_uzs": 1827000,
+    "image_url": "/products/msi-245-300.png",
+    "in_stock": true,
+    "size_inch": 24.5,
+    "refresh_hz": 300,
+    "resolution": "1920x1080"
+  },
+  {
+    "id": "mon-aoc-27-300",
+    "category": "monitor",
+    "name": "AOC 27\" 300Hz",
+    "price_uzs": 2268000,
+    "image_url": "/products/aoc-27-300.png",
+    "in_stock": true,
+    "size_inch": 27,
+    "refresh_hz": 300,
+    "resolution": "1920x1080"
+  }
+]

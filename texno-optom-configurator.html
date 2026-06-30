@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texno Optom Gaming | PC Konfigurator</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #141414;
+            --border: #1e1e1e;
+            --accent: #00ff88;
+            --accent-hover: #00cc6a;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --danger: #ff4444;
+            --success: #00ff88;
+            --font-main: 'Segoe UI', 'Inter', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: #050505;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo h1 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .seller-badge {
+            display: none;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--text-muted);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+            color: var(--bg);
+        }
+
+        .btn-danger {
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+        .btn-danger:hover {
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--danger);
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 5%;
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        /* --- Steps Area --- */
+        .steps-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .step-header {
+            padding: 1.2rem 1.5rem;
+            background: rgba(255,255,255,0.02);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .step-header:hover {
+            background: rgba(255,255,255,0.04);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--border);
+            color: var(--text-muted);
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .step-section.active .step-number {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .step-section.completed .step-title {
+            color: var(--accent);
+        }
+
+        .step-selection-info {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .step-content {
+            display: none;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .step-section.active .step-content {
+            display: block;
+        }
+
+        .step-tools {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input, .sort-select {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-input:focus, .sort-select:focus {
+            border-color: var(--accent);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            background: #0f0f0f;
+            border-color: #333;
+        }
+
+        .product-card.selected {
+            border-color: var(--accent);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .product-card.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .product-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-price-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 0.8rem;
+        }
+
+        .client-price {
+            display: none; /* Hidden for clients on individual items by default per prompt */
+        }
+
+        /* Platform specific styling */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .platform-card {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .platform-card.intel:hover, .platform-card.intel.selected { border-color: #0068b5; background: rgba(0, 104, 181, 0.1); }
+        .platform-card.amd:hover, .platform-card.amd.selected { border-color: #ed1c24; background: rgba(237, 28, 36, 0.1); }
+
+
+        /* --- Seller UI Elements --- */
+        .seller-ui {
+            display: none;
+            font-size: 0.85rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .seller-ui input {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 60px;
+            padding: 0.2rem;
+            margin-left: 5px;
+            border-radius: 3px;
+        }
+
+        .seller-mode-active .seller-ui {
+            display: block;
+        }
+
+        .seller-settings {
+            display: none;
+            background: var(--card-bg);
+            border: 1px dashed var(--accent);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .seller-mode-active .seller-settings {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .seller-setting-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .seller-setting-group input {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.4rem;
+            border-radius: 4px;
+            width: 100px;
+        }
+
+
+        /* --- Sidebar Summary --- */
+        .summary-sidebar {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            position: sticky;
+            top: 6rem;
+            padding: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .summary-sidebar {
+                width: 380px;
+                flex-shrink: 0;
+            }
+        }
+
+        .summary-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .summary-item-label {
+            color: var(--text-muted);
+            width: 40%;
+        }
+
+        .summary-item-value {
+            width: 55%;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .summary-item-remove {
+            width: 5%;
+            color: var(--danger);
+            cursor: pointer;
+            text-align: right;
+            opacity: 0.5;
+        }
+        .summary-item-remove:hover { opacity: 1; }
+
+        .fps-estimator {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: none;
+        }
+
+        .fps-estimator.active {
+            display: block;
+        }
+
+        .fps-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .fps-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .total-section {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .total-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .total-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .seller-totals {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #000;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .seller-mode-active .seller-totals {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .seller-total-row {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+        }
+
+        .seller-total-row.profit {
+            color: var(--success);
+            font-weight: 600;
+            border-top: 1px dashed #333;
+            padding-top: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .sidebar-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .btn-telegram {
+            background: #2AABEE;
+            color: white;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            padding: 1rem;
+            text-decoration: none;
+        }
+        .btn-telegram:hover {
+            background: #229ED9;
+        }
+
+        @media print {
+            header, .steps-wrapper, .sidebar-actions, .seller-settings {
+                display: none !important;
+            }
+            .summary-sidebar {
+                width: 100%;
+                border: none;
+                position: static;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .summary-item-label { color: #555; }
+            .total-price { color: black; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>TEXNO OPTOM</h1>
+            <p>CS2 READY | PC KONFIGURATOR</p>
+        </div>
+        <div class="header-controls">
+            <span class="seller-badge" id="seller-badge">SOTUVCHI REJIMI</span>
+            <button class="btn" id="btn-seller-login">Sotuvchi kirish</button>
+            <button class="btn btn-danger" style="display:none;" id="btn-seller-logout">Chiqish</button>
+            <button class="btn" onclick="window.print()">Chop etish</button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="steps-wrapper">
+            <div class="seller-settings" id="seller-settings">
+                <div class="seller-setting-group">
+                    <label>Dollar kursi (so'm):</label>
+                    <input type="number" id="global-rate" value="12850" step="50">
+                </div>
+                <div class="seller-setting-group">
+                    <label>Umumiy Marja (%):</label>
+                    <input type="number" id="global-margin" value="20" step="1">
+                </div>
+            </div>
+
+            <!-- Steps will be generated here by JS -->
+            <div id="steps-container"></div>
+        </div>
+
+        <div class="summary-sidebar">
+            <h2 class="summary-title">Konfiguratsiya</h2>
+            
+            <div class="summary-items" id="summary-items">
+                <!-- Selected items will appear here -->
+            </div>
+
+            <div class="fps-estimator" id="fps-estimator">
+                <div class="fps-title">Taxminiy CS2 FPS</div>
+                <div class="fps-value" id="fps-value">--</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">1080p High Settings (Kafolatlangan min)</div>
+            </div>
+
+            <div class="total-section">
+                <div class="total-label">Umumiy Sotuv Narxi</div>
+                <div class="total-price" id="total-price">0 so'm</div>
+                
+                <div class="seller-totals" id="seller-totals">
+                    <div class="seller-total-row">
+                        <span>Jami Tan Narx:</span>
+                        <span id="seller-total-base">$0</span>
+                    </div>
+                    <div class="seller-total-row profit">
+                        <span>Sof Foyda:</span>
+                        <span id="seller-total-profit">0 so'm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-actions">
+                <a href="#" class="btn btn-telegram" id="btn-order-tg" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2L2 10.5l6.5 2.5 1.5 7 4-4 4.5 4.5L21.5 2z"></path></svg>
+                    Telegram orqali buyurtma
+                </a>
+                <button class="btn btn-danger" id="btn-clear-config">Konfiguratsiyani tozalash</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. DATA (Ma'lumotlar bazasi)
+        // ==========================================
+        
+        const db = {
+            platform: [
+                { id: 'plat-intel', name: 'Intel', type: 'intel' },
+                { id: 'plat-amd', name: 'AMD', type: 'amd' }
+            ],
+            cpu: [
+                { id: 'c1', name: "Intel Core i3-12100F", socket: "LGA1700", price: 96, tdp: 65, type: 'intel', tier: 1 },
+                { id: 'c2', name: "Intel Core i3-12100", socket: "LGA1700", price: 127, tdp: 65, type: 'intel', tier: 1 },
+                { id: 'c3', name: "Intel Core i3-13100", socket: "LGA1700", price: 129, tdp: 65, type: 'intel', tier: 1 },
+                { id: 'c4', name: "Intel Core i3-14100F", socket: "LGA1700", price: 106, tdp: 65, type: 'intel', tier: 1 },
+                { id: 'c5', name: "Intel Core i3-14100", socket: "LGA1700", price: 130, tdp: 65, type: 'intel', tier: 1 },
+                { id: 'c6', name: "Intel Core i5-12400F", socket: "LGA1700", price: 137, tdp: 65, type: 'intel', tier: 2 },
+                { id: 'c7', name: "Intel Core i5-12400", socket: "LGA1700", price: 186, tdp: 65, type: 'intel', tier: 2 },
+                { id: 'c8', name: "Intel Core i5-13400F", socket: "LGA1700", price: 157, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c9', name: "Intel Core i5-13400", socket: "LGA1700", price: 214, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c10', name: "Intel Core i5-13500", socket: "LGA1700", price: 222, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c11', name: "Intel Core i5-14400F", socket: "LGA1700", price: 159, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c12', name: "Intel Core i5-14400", socket: "LGA1700", price: 219, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c13', name: "Intel Core i5-14600K", socket: "LGA1700", price: 240, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c14', name: "Intel Core i5-14600KF", socket: "LGA1700", price: 236, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c15', name: "Intel Core i7-12700", socket: "LGA1700", price: 335, tdp: 65, type: 'intel', tier: 4 },
+                { id: 'c16', name: "Intel Core i7-12700KF", socket: "LGA1700", price: 300, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c17', name: "Intel Core i7-12700K", socket: "LGA1700", price: 314, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c18', name: "Intel Core i7-13700F", socket: "LGA1700", price: 300, tdp: 65, type: 'intel', tier: 5 },
+                { id: 'c19', name: "Intel Core i7-13700", socket: "LGA1700", price: 390, tdp: 65, type: 'intel', tier: 5 },
+                { id: 'c20', name: "Intel Core i7-14700F", socket: "LGA1700", price: 310, tdp: 65, type: 'intel', tier: 5 },
+                { id: 'c21', name: "Intel Core i7-14700", socket: "LGA1700", price: 370, tdp: 65, type: 'intel', tier: 5 },
+                { id: 'c22', name: "Intel Core i7-14700K", socket: "LGA1700", price: 402, tdp: 125, type: 'intel', tier: 5 },
+                { id: 'c23', name: "Intel Core i7-14700KF", socket: "LGA1700", price: 332, tdp: 125, type: 'intel', tier: 5 },
+                { id: 'c24', name: "Intel Core i9-14900K", socket: "LGA1700", price: 490, tdp: 253, type: 'intel', tier: 6 },
+                { id: 'c25', name: "Intel Core i9-14900KF", socket: "LGA1700", price: 440, tdp: 253, type: 'intel', tier: 6 },
+                { id: 'c26', name: "Intel Core Ultra 5-225F", socket: "LGA1851", price: 130, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c27', name: "Intel Core Ultra 5-225", socket: "LGA1851", price: 157, tdp: 65, type: 'intel', tier: 3 },
+                { id: 'c28', name: "Intel Core Ultra 5-245K", socket: "LGA1851", price: 203, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c29', name: "Intel Core Ultra 5-245KF", socket: "LGA1851", price: 182, tdp: 125, type: 'intel', tier: 4 },
+                { id: 'c30', name: "Intel Core Ultra 7-265K", socket: "LGA1851", price: 293, tdp: 125, type: 'intel', tier: 5 },
+                { id: 'c31', name: "Intel Core Ultra 7-265KF", socket: "LGA1851", price: 285, tdp: 125, type: 'intel', tier: 5 },
+                { id: 'c32', name: "Intel Core Ultra 9-285K", socket: "LGA1851", price: 600, tdp: 125, type: 'intel', tier: 6 },
+                { id: 'c33', name: "AMD Ryzen 5 5500", socket: "AM4", price: 90, tdp: 65, type: 'amd', tier: 1 },
+                { id: 'c34', name: "AMD Ryzen 5 5600", socket: "AM4", price: 125, tdp: 65, type: 'amd', tier: 2 },
+                { id: 'c35', name: "AMD Ryzen 5 5600X", socket: "AM4", price: 135, tdp: 65, type: 'amd', tier: 2 },
+                { id: 'c36', name: "AMD Ryzen 7 5700X", socket: "AM4", price: 145, tdp: 65, type: 'amd', tier: 3 },
+                { id: 'c37', name: "AMD Ryzen 5 7500F", socket: "AM5", price: 125, tdp: 65, type: 'amd', tier: 3 },
+                { id: 'c38', name: "AMD Ryzen 5 7600X", socket: "AM5", price: 172, tdp: 105, type: 'amd', tier: 3 },
+                { id: 'c39', name: "AMD Ryzen 7 7700X", socket: "AM5", price: 233, tdp: 105, type: 'amd', tier: 4 },
+                { id: 'c40', name: "AMD Ryzen 7 7800X3D", socket: "AM5", price: 305, tdp: 120, type: 'amd', tier: 6 },
+                { id: 'c41', name: "AMD Ryzen 5 9600X", socket: "AM5", price: 190, tdp: 65, type: 'amd', tier: 4 },
+                { id: 'c42', name: "AMD Ryzen 7 9800X3D", socket: "AM5", price: 425, tdp: 120, type: 'amd', tier: 6 },
+                { id: 'c43', name: "AMD Ryzen 7 9850X3D", socket: "AM5", price: 490, tdp: 120, type: 'amd', tier: 6 },
+                { id: 'c44', name: "AMD Ryzen 9 9900X", socket: "AM5", price: 375, tdp: 120, type: 'amd', tier: 6 },
+                { id: 'c45', name: "AMD Ryzen 9 9900X3D", socket: "AM5", price: 570, tdp: 120, type: 'amd', tier: 6 },
+                { id: 'c46', name: "AMD Ryzen 9 9950X3D", socket: "AM5", price: 645, tdp: 170, type: 'amd', tier: 6 },
+            ],
+            mb: [
+                { id: 'mb1', name: "Maxsun H610M-H V1 DDR4", socket: "LGA1700", ddr: "DDR4", price: 48 },
+                { id: 'mb2', name: "MSI PRO H610M-S DDR4", socket: "LGA1700", ddr: "DDR4", price: 55 },
+                { id: 'mb3', name: "Gigabyte H610M K DDR4", socket: "LGA1700", ddr: "DDR4", price: 56 },
+                { id: 'mb4', name: "ASUS PRIME H610M-F DDR4", socket: "LGA1700", ddr: "DDR4", price: 57 },
+                { id: 'mb5', name: "MSI PRO H610M-E DDR5", socket: "LGA1700", ddr: "DDR5", price: 65 },
+                { id: 'mb6', name: "Gigabyte H610M K V2 DDR5", socket: "LGA1700", ddr: "DDR5", price: 62 },
+                { id: 'mb7', name: "MSI PRO H610M-G DDR5", socket: "LGA1700", ddr: "DDR5", price: 75 },
+                { id: 'mb8', name: "Maxsun B760M-F DDR4", socket: "LGA1700", ddr: "DDR4", price: 73 },
+                { id: 'mb9', name: "MSI PRO B760M-E DDR4", socket: "LGA1700", ddr: "DDR4", price: 73 },
+                { id: 'mb10', name: "Gigabyte B760M H DDR4", socket: "LGA1700", ddr: "DDR4", price: 78 },
+                { id: 'mb11', name: "MSI PRO B760M-P DDR4", socket: "LGA1700", ddr: "DDR4", price: 85 },
+                { id: 'mb12', name: "Maxsun B760M-N D5 V2 DDR5", socket: "LGA1700", ddr: "DDR5", price: 75 },
+                { id: 'mb13', name: "Maxsun B760M Gaming WIFI GANK V2 DDR5", socket: "LGA1700", ddr: "DDR5", price: 80 },
+                { id: 'mb14', name: "MSI PRO B760M-E DDR5", socket: "LGA1700", ddr: "DDR5", price: 87 },
+                { id: 'mb15', name: "Gigabyte B760M H V2 DDR5", socket: "LGA1700", ddr: "DDR5", price: 93 },
+                { id: 'mb16', name: "MSI PRO B760M-P DDR5", socket: "LGA1700", ddr: "DDR5", price: 98 },
+                { id: 'mb17', name: "Gigabyte B760M D3HP DDR5", socket: "LGA1700", ddr: "DDR5", price: 98 },
+                { id: 'mb18', name: "Maxsun B760M I-CAFE DDR5", socket: "LGA1700", ddr: "DDR5", price: 103 },
+                { id: 'mb19', name: "Gigabyte B760M DS3H GEN5 DDR5", socket: "LGA1700", ddr: "DDR5", price: 108 },
+                { id: 'mb20', name: "ASUS PRIME B760M-K DDR5", socket: "LGA1700", ddr: "DDR5", price: 90 },
+                { id: 'mb21', name: "ASUS PRIME B760M-A DDR5", socket: "LGA1700", ddr: "DDR5", price: 103 },
+                { id: 'mb22', name: "MSI PRO B760M-A WIFI DDR5", socket: "LGA1700", ddr: "DDR5", price: 135 },
+                { id: 'mb23', name: "MSI B760M GAMING PLUS WIFI DDR5", socket: "LGA1700", ddr: "DDR5", price: 140 },
+                { id: 'mb24', name: "Gigabyte B760M GAMING X WF6E DDR5", socket: "LGA1700", ddr: "DDR5", price: 163 },
+                { id: 'mb25', name: "Gigabyte Z790D DDR5", socket: "LGA1700", ddr: "DDR5", price: 180 },
+                { id: 'mb26', name: "ASUS PRIME Z790-P DDR5", socket: "LGA1700", ddr: "DDR5", price: 190 },
+                { id: 'mb27', name: "MSI B860M GAMING PLUS WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 215 },
+                { id: 'mb28', name: "Gigabyte B860M GAMING WIFI6 DDR5", socket: "LGA1851", ddr: "DDR5", price: 175 },
+                { id: 'mb29', name: "Gigabyte B860M GAMING X WIFI6E DDR5", socket: "LGA1851", ddr: "DDR5", price: 195 },
+                { id: 'mb30', name: "MSI B860 GAMING PLUS WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 235 },
+                { id: 'mb31', name: "ASUS ROG STRIX B860-G GAMING WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 270 },
+                { id: 'mb32', name: "ASUS ROG STRIX B860-A GAMING WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 280 },
+                { id: 'mb33', name: "MSI MAG Z890 TOMAHAWK WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 360 },
+                { id: 'mb34', name: "ASUS TUF GAMING Z890-PLUS WIFI DDR5", socket: "LGA1851", ddr: "DDR5", price: 340 },
+                { id: 'mb35', name: "Gigabyte B550M GAMING X WIFI6 DDR4", socket: "AM4", ddr: "DDR4", price: 125 },
+                { id: 'mb36', name: "Gigabyte B550 EAGLE WIFI6 DDR4", socket: "AM4", ddr: "DDR4", price: 135 },
+                { id: 'mb37', name: "ASUS ROG STRIX B550-A DDR4", socket: "AM4", ddr: "DDR4", price: 170 },
+                { id: 'mb38', name: "Maxsun B650M I-CAFE DDR5", socket: "AM5", ddr: "DDR5", price: 103 },
+                { id: 'mb39', name: "MSI PRO B650M-P DDR5", socket: "AM5", ddr: "DDR5", price: 110 },
+                { id: 'mb40', name: "ASUS PRIME B650M-K DDR5", socket: "AM5", ddr: "DDR5", price: 110 },
+                { id: 'mb41', name: "SAPPHIRE B650M-E DDR5", socket: "AM5", ddr: "DDR5", price: 105 },
+                { id: 'mb42', name: "Gigabyte B650M S2H DDR5", socket: "AM5", ddr: "DDR5", price: 115 },
+                { id: 'mb43', name: "MSI PRO B650-S WIFI DDR5", socket: "AM5", ddr: "DDR5", price: 145 },
+                { id: 'mb44', name: "Maxsun B850M-K WIFI DDR5", socket: "AM5", ddr: "DDR5", price: 98 },
+                { id: 'mb45', name: "MSI PRO B840M-B DDR5", socket: "AM5", ddr: "DDR5", price: 95 },
+                { id: 'mb46', name: "Gigabyte B850M FORCE DDR5", socket: "AM5", ddr: "DDR5", price: 165 },
+                { id: 'mb47', name: "Gigabyte B850M FORCE WF6E DDR5", socket: "AM5", ddr: "DDR5", price: 180 },
+                { id: 'mb48', name: "SAPPHIRE PURE B850M WIFI DDR5", socket: "AM5", ddr: "DDR5", price: 170 },
+                { id: 'mb49', name: "ASUS B850M MAX GAMING WIFI DDR5", socket: "AM5", ddr: "DDR5", price: 190 },
+                { id: 'mb50', name: "MSI B850 GAMING PLUS WIFI6E DDR5", socket: "AM5", ddr: "DDR5", price: 200 },
+                { id: 'mb51', name: "MSI MAG B850 TOMAHAWK MAX WIFI DDR5", socket: "AM5", ddr: "DDR5", price: 265 },
+                { id: 'mb52', name: "Gigabyte X870 GAMING WF6 DDR5", socket: "AM5", ddr: "DDR5", price: 230 }
+            ],
+            ram: [
+                { id: 'r1', name: "Dahua DDR4 8GB 3200MHz", ddr: "DDR4", price: 50 },
+                { id: 'r2', name: "Team DDR4 8GB 3200MHz", ddr: "DDR4", price: 50 },
+                { id: 'r3', name: "Lexar DDR4 8GB 3200MHz", ddr: "DDR4", price: 53 },
+                { id: 'r4', name: "Crucial DDR4 8GB 3200MHz", ddr: "DDR4", price: 53 },
+                { id: 'r5', name: "ACER DDR4 16GB 3200MHz", ddr: "DDR4", price: 98 },
+                { id: 'r6', name: "Hiksemi DDR4 16GB 3200MHz", ddr: "DDR4", price: 98 },
+                { id: 'r7', name: "Patriot DDR4 16GB 3200MHz", ddr: "DDR4", price: 98 },
+                { id: 'r8', name: "Crucial DDR4 16GB 3200MHz", ddr: "DDR4", price: 106 },
+                { id: 'r9', name: "Lexar DDR4 16GB 3200MHz", ddr: "DDR4", price: 110 },
+                { id: 'r10', name: "Kingston DDR4 16GB 3200MHz (8*2) RGB", ddr: "DDR4", price: 138 },
+                { id: 'r11', name: "Teamgroup DDR4 16GB 3600MHz (8*2) RGB", ddr: "DDR4", price: 138 },
+                { id: 'r12', name: "Kingston DDR4 32GB 3600MHz RGB", ddr: "DDR4", price: 192 },
+                { id: 'r13', name: "Apacer DDR5 16GB 5600MHz", ddr: "DDR5", price: 170 },
+                { id: 'r14', name: "Adata DDR5 16GB 5600MHz", ddr: "DDR5", price: 170 },
+                { id: 'r15', name: "Patriot DDR5 16GB 6000MHz", ddr: "DDR5", price: 170 },
+                { id: 'r16', name: "Samsung DDR5 16GB 6400MHz", ddr: "DDR5", price: 175 },
+                { id: 'r17', name: "Kingston DDR5 16GB 5600MHz", ddr: "DDR5", price: 175 },
+                { id: 'r18', name: "Adata DDR5 32GB 5600MHz", ddr: "DDR5", price: 315 },
+                { id: 'r19', name: "Teamgroup DDR5 32GB 5600MHz (16*2) RGB", ddr: "DDR5", price: 370 },
+                { id: 'r20', name: "Kingston DDR5 32GB 6000MHz RGB", ddr: "DDR5", price: 400 },
+                { id: 'r21', name: "Kingston DDR5 32GB 6000MHz (16*2) RGB", ddr: "DDR5", price: 420 },
+                { id: 'r22', name: "Lexar DDR5 32GB 8000MHz (16*2) RGB", ddr: "DDR5", price: 400 },
+                { id: 'r23', name: "Kingston DDR5 64GB 6000MHz (32*2) RGB", ddr: "DDR5", price: 840 },
+                { id: 'r24', name: "Lexar DDR5 64GB 6000MHz (32*2) RGB", ddr: "DDR5", price: 800 }
+            ],
+            gpu: [
+                { id: 'g1', name: "Axle GT730 4GB DDR3", price: 45, tdp: 25, tier: 1 },
+                { id: 'g2', name: "Axle RX550 4GB", price: 74, tdp: 50, tier: 1 },
+                { id: 'g3', name: "Peladin RX580 8GB", price: 112, tdp: 185, tier: 2 },
+                { id: 'g4', name: "Axle RX580 8GB", price: 115, tdp: 185, tier: 2 },
+                { id: 'g5', name: "Peladin GTX1650 4GB", price: 140, tdp: 75, tier: 2 },
+                { id: 'g6', name: "Arktek GTX1650 4GB", price: 143, tdp: 75, tier: 2 },
+                { id: 'g7', name: "Peladin GTX1660 Super 6GB", price: 165, tdp: 125, tier: 3 },
+                { id: 'g8', name: "Arktek GTX1660 Super 6GB", price: 170, tdp: 125, tier: 3 },
+                { id: 'g9', name: "Axle GTX1660 Super 6GB", price: 170, tdp: 125, tier: 3 },
+                { id: 'g10', name: "Peladin RTX3050 8GB", price: 185, tdp: 130, tier: 3 },
+                { id: 'g11', name: "Arktek RTX3050 8GB", price: 200, tdp: 130, tier: 3 },
+                { id: 'g12', name: "Axle RTX3050 8GB", price: 200, tdp: 130, tier: 3 },
+                { id: 'g13', name: "Peladin RTX2060 Super 8GB", price: 217, tdp: 160, tier: 4 },
+                { id: 'g14', name: "Arktek RTX2060 Super 8GB", price: 220, tdp: 160, tier: 4 },
+                { id: 'g15', name: "MSI RTX3050 VENTUS 2X 8GB", price: 220, tdp: 130, tier: 3 },
+                { id: 'g16', name: "Gigabyte RTX3050 WINDFORCE 8GB", price: 245, tdp: 130, tier: 3 },
+                { id: 'g17', name: "Sapphire RX7600 8GB PULSE", price: 265, tdp: 165, tier: 4 },
+                { id: 'g18', name: "Peladin RTX5050 8GB", price: 290, tdp: 150, tier: 4 },
+                { id: 'g19', name: "Zotac RTX5050 TWIN EDGE 8GB", price: 300, tdp: 150, tier: 4 },
+                { id: 'g20', name: "Peladin RTX5060 8GB", price: 350, tdp: 150, tier: 5 },
+                { id: 'g21', name: "MSI RTX5060 SHADOW 2X 8GB", price: 375, tdp: 150, tier: 5 },
+                { id: 'g22', name: "Zotac RTX5060 TWIN EDGE 8GB", price: 380, tdp: 150, tier: 5 },
+                { id: 'g23', name: "Palit RTX5060 DUAL 8GB", price: 385, tdp: 150, tier: 5 },
+                { id: 'g24', name: "ASUS RTX5060 DUAL OC 8GB", price: 390, tdp: 150, tier: 5 },
+                { id: 'g25', name: "Gigabyte RTX5060 WINDFORCE 8GB", price: 380, tdp: 150, tier: 5 },
+                { id: 'g26', name: "Inno3D RTX5060Ti TWIN X2 8GB", price: 410, tdp: 180, tier: 5 },
+                { id: 'g27', name: "Gigabyte RTX5060Ti WINDFORCE 8GB", price: 430, tdp: 180, tier: 5 },
+                { id: 'g28', name: "MSI RTX5060Ti VENTUS 2X OC 8GB", price: 450, tdp: 180, tier: 5 },
+                { id: 'g29', name: "Inno3D RTX5060Ti 16GB TWIN X2", price: 560, tdp: 180, tier: 6 },
+                { id: 'g30', name: "Palit RTX5060Ti 16GB INFINITY 3", price: 580, tdp: 180, tier: 6 },
+                { id: 'g31', name: "MSI RTX5060Ti 16GB SHADOW 2X", price: 565, tdp: 180, tier: 6 },
+                { id: 'g32', name: "Gigabyte RTX5060Ti 16GB WINDFORCE", price: 600, tdp: 180, tier: 6 },
+                { id: 'g33', name: "Inno3D RTX5070 TWIN X2 12GB", price: 650, tdp: 250, tier: 6 },
+                { id: 'g34', name: "Palit RTX5070 INFINITY 3 12GB", price: 660, tdp: 250, tier: 6 },
+                { id: 'g35', name: "MSI RTX5070 SHADOW 2X OC 12GB", price: 630, tdp: 250, tier: 6 },
+                { id: 'g36', name: "Zotac RTX5070 TWIN EDGE 12GB", price: 695, tdp: 250, tier: 6 },
+                { id: 'g37', name: "ASUS RTX5070 DUAL OC 12GB", price: 700, tdp: 250, tier: 6 },
+                { id: 'g38', name: "Gigabyte RTX5070 WINDFORCE 12GB", price: 680, tdp: 250, tier: 6 },
+                { id: 'g39', name: "Palit RTX5070Ti GAMINGPRO-S OC 16GB", price: 980, tdp: 300, tier: 7 },
+                { id: 'g40', name: "MSI RTX5070Ti VENTUS 3X OC 16GB", price: 1000, tdp: 300, tier: 7 },
+                { id: 'g41', name: "Gigabyte RTX5070Ti WINDFORCE OC 16GB", price: 1050, tdp: 300, tier: 7 },
+                { id: 'g42', name: "Palit RTX5080 GAMINGPRO 16GB", price: 1350, tdp: 360, tier: 8 },
+                { id: 'g43', name: "Gigabyte RTX5080 WINDFORCE 16GB", price: 1450, tdp: 360, tier: 8 },
+                { id: 'g44', name: "ASUS RTX5080 PRIME 16GB", price: 1550, tdp: 360, tier: 8 },
+                { id: 'g45', name: "Gigabyte RX9060XT GAMING OC 8GB", price: 380, tdp: 150, tier: 5 },
+                { id: 'g46', name: "Gigabyte RX9060XT GAMING OC 16GB", price: 490, tdp: 150, tier: 6 },
+                { id: 'g47', name: "ASUS RX9060XT DUAL 16GB", price: 530, tdp: 150, tier: 6 },
+                { id: 'g48', name: "Sapphire RX9070 PULSE 16GB", price: 730, tdp: 250, tier: 6 },
+                { id: 'g49', name: "Gigabyte RX9070XT GAMING 16GB", price: 830, tdp: 300, tier: 7 },
+                { id: 'g50', name: "Sapphire RX9070XT NITRO+ 16GB", price: 880, tdp: 300, tier: 7 },
+                { id: 'g51', name: "Peladin RTX3060 12GB", price: 305, tdp: 170, tier: 4 },
+                { id: 'g52', name: "Arktek RTX3060 12GB", price: 316, tdp: 170, tier: 4 },
+                { id: 'g53', name: "Palit RTX3070 JETSTREAM 8GB", price: 340, tdp: 220, tier: 5 },
+                { id: 'g54', name: "Sapphire RX7700XT 12GB", price: 480, tdp: 245, tier: 5 }
+            ],
+            storage: [
+                { id: 's1', name: "SSD Apacer 128GB SATA", price: 27 },
+                { id: 's2', name: "SSD PNY 120GB SATA", price: 25 },
+                { id: 's3', name: "SSD Lexar 128GB SATA", price: 34 },
+                { id: 's4', name: "SSD Hikvision 256GB SATA", price: 44 },
+                { id: 's5', name: "SSD M.2 AGI 256GB NVMe", price: 45 },
+                { id: 's6', name: "SSD M.2 Hiksemi 256GB NVMe", price: 45 },
+                { id: 's7', name: "SSD M.2 Netac 256GB NVMe", price: 45 },
+                { id: 's8', name: "SSD M.2 Apacer 256GB NVMe", price: 48 },
+                { id: 's9', name: "SSD M.2 Kingfast 256GB NVMe", price: 48 },
+                { id: 's10', name: "SSD Lexar 256GB SATA", price: 50 },
+                { id: 's11', name: "SSD OSCOO 512GB SATA", price: 59 },
+                { id: 's12', name: "SSD Patriot 512GB SATA", price: 63 },
+                { id: 's13', name: "SSD AGI 512GB SATA", price: 63 },
+                { id: 's14', name: "SSD Netac 512GB SATA", price: 63 },
+                { id: 's15', name: "SSD M.2 AGI 512GB NVMe", price: 68 },
+                { id: 's16', name: "SSD M.2 Hiksemi 512GB NVMe", price: 68 },
+                { id: 's17', name: "SSD M.2 Netac 512GB NVMe", price: 68 },
+                { id: 's18', name: "SSD M.2 Adlink 512GB NVMe", price: 68 },
+                { id: 's19', name: "SSD M.2 Lexar 512GB NVMe LNM620", price: 80 },
+                { id: 's20', name: "SSD M.2 Gigabyte 512GB NVMe", price: 83 },
+                { id: 's21', name: "SSD Patriot 1TB SATA", price: 114 },
+                { id: 's22', name: "SSD Adata 1TB SATA", price: 114 },
+                { id: 's23', name: "SSD M.2 Netac 1TB NVMe", price: 128 },
+                { id: 's24', name: "SSD M.2 Lexar 1TB NVMe NM610", price: 129 },
+                { id: 's25', name: "SSD M.2 Lexar 1TB NVMe NQ700", price: 139 },
+                { id: 's26', name: "SSD M.2 Kingston 1TB NVMe NV3", price: 142 },
+                { id: 's27', name: "SSD M.2 Samsung 1TB 990 PRO NVMe", price: 215 },
+                { id: 's28', name: "SSD M.2 Samsung 1TB 9100 PRO NVMe", price: 235 },
+                { id: 's29', name: "SSD M.2 Lexar 2TB NVMe NM610", price: 237 },
+                { id: 's30', name: "SSD M.2 Samsung 2TB 990 EVO Plus NVMe", price: 275 },
+                { id: 's31', name: "HDD 1TB Toshiba 5700Rpm", price: 78 },
+                { id: 's32', name: "HDD 2TB Toshiba 5400Rpm", price: 105 }
+            ],
+            cooler: [
+                { id: 'co1', name: "Deepcool CK-11508", price: 3.5 },
+                { id: 'co2', name: "Deepcool GAMMA ARCHER V2", price: 6.5 },
+                { id: 'co3', name: "ID Cooling SE-802-SD V3", price: 7 },
+                { id: 'co4', name: "Deepcool AG300", price: 10 },
+                { id: 'co5', name: "ID Cooling SE-903-XT FRGB", price: 11 },
+                { id: 'co6', name: "Deepcool AG300 LED", price: 12 },
+                { id: 'co7', name: "ID Cooling SE-214-XT ARGB", price: 16 },
+                { id: 'co8', name: "ID Cooling SE-224-XTS", price: 18 },
+                { id: 'co9', name: "Deepcool AG400 G2", price: 18 },
+                { id: 'co10', name: "ID Cooling FROZN A400 BLACK", price: 17 },
+                { id: 'co11', name: "Deepcool AK400", price: 22 },
+                { id: 'co12', name: "ID Cooling SE-224-XTS ARGB", price: 22 },
+                { id: 'co13', name: "ID Cooling FROZN A410 DK", price: 24 },
+                { id: 'co14', name: "Deepcool AK400 DIGITAL SE", price: 29 },
+                { id: 'co15', name: "Deepcool AG620 G2", price: 32 },
+                { id: 'co16', name: "ID Cooling FROZN A610 BLACK", price: 32 },
+                { id: 'co17', name: "ID Cooling SE-225-XT BLACK V2", price: 35 },
+                { id: 'co18', name: "Deepcool AK500S DIGITAL SE", price: 35 },
+                { id: 'co19', name: "Deepcool AK620", price: 53 },
+                { id: 'co20', name: "Deepcool AK620 DIGITAL SE WH", price: 53 },
+                { id: 'co21', name: "ID Cooling FX360 PRO (suvli)", price: 51 },
+                { id: 'co22', name: "ID Cooling DASHFLOW 360 BASIC (suvli)", price: 60 },
+                { id: 'co23', name: "Deepcool LE360 V2 (suvli)", price: 58 },
+                { id: 'co24', name: "Deepcool LM360 (suvli)", price: 88 },
+                { id: 'co25', name: "ID Cooling SL360 PRO SE (suvli)", price: 100 },
+                { id: 'co26', name: "Deepcool LS720 (suvli)", price: 115 },
+                { id: 'co27', name: "Deepcool MYSTIQUE 360 (suvli)", price: 135 }
+            ],
+            psu: [
+                { id: 'p1', name: "Deepcool DE500 V2 350W", watt: 350, price: 22 },
+                { id: 'p2', name: "Deepcool DE600 V2 450W", watt: 450, price: 25 },
+                { id: 'p3', name: "Deepcool PF450 450W 80+", watt: 450, price: 24 },
+                { id: 'p4', name: "Deepcool GamerStorm PF500X 500W Bronze", watt: 500, price: 30 },
+                { id: 'p5', name: "Deepcool PF550 550W 80+", watt: 550, price: 33 },
+                { id: 'p6', name: "FSP HV Pro 550W 80+", watt: 550, price: 33 },
+                { id: 'p7', name: "Thermaltake Litepower 550W", watt: 550, price: 35 },
+                { id: 'p8', name: "Montech APX550 550W", watt: 550, price: 36 },
+                { id: 'p9', name: "Deepcool GamerStorm PF600X 600W Bronze", watt: 600, price: 36 },
+                { id: 'p10', name: "Deepcool PF650 650W 80+", watt: 650, price: 39 },
+                { id: 'p11', name: "FSP HV Pro 650W 80+", watt: 650, price: 41 },
+                { id: 'p12', name: "Deepcool GamerStorm PF700X 700W Bronze", watt: 700, price: 41 },
+                { id: 'p13', name: "Deepcool PF750 750W 80+", watt: 750, price: 44 },
+                { id: 'p14', name: "Deepcool PK550D 550W Bronze", watt: 550, price: 46 },
+                { id: 'p15', name: "Deepcool PK650D 650W Bronze", watt: 650, price: 52 },
+                { id: 'p16', name: "Deepcool PL650D 650W Bronze", watt: 650, price: 57 },
+                { id: 'p17', name: "FSP HYDRO K Pro 750W", watt: 750, price: 70 },
+                { id: 'p18', name: "Deepcool PQ650G 650W Gold", watt: 650, price: 75 },
+                { id: 'p19', name: "Deepcool PN750D 750W Gold", watt: 750, price: 76 },
+                { id: 'p20', name: "FSP HYDRO Pro 800W Bronze", watt: 800, price: 80 },
+                { id: 'p21', name: "Deepcool PQ750G 750W Gold", watt: 750, price: 82 },
+                { id: 'p22', name: "Deepcool PQ850G 850W Gold", watt: 850, price: 88 },
+                { id: 'p23', name: "Deepcool PN850D 850W Gold", watt: 850, price: 95 },
+                { id: 'p24', name: "Deepcool PN1000D 1000W Gold", watt: 1000, price: 100 },
+                { id: 'p25', name: "Montech CENTURY G5 850W Gold", watt: 850, price: 108 },
+                { id: 'p26', name: "Deepcool PQ1000G 1000W Gold", watt: 1000, price: 115 },
+                { id: 'p27', name: "Montech Century II 1050W Gold", watt: 1050, price: 116 },
+                { id: 'p28', name: "Deepcool PQ1200G 1200W Gold", watt: 1200, price: 130 },
+                { id: 'p29', name: "Montech Century II 1200W Gold", watt: 1200, price: 138 },
+                { id: 'p30', name: "Thermaltake GF3 1000W Gold", watt: 1000, price: 146 },
+                { id: 'p31', name: "FSP HYDRO G Pro 1200W Gold", watt: 1200, price: 195 }
+            ],
+            case: [
+                { id: 'ca1', name: "Pixel Mikro ATX Korpus", price: 17 },
+                { id: 'ca2', name: "FSP CMT192 (Mesh)", price: 35 },
+                { id: 'ca3', name: "FSP CMT192 (Glass)", price: 28 },
+                { id: 'ca4', name: "FSP CMT196 Black", price: 32 },
+                { id: 'ca5', name: "Deepcool CC360 ARGB", price: 41 },
+                { id: 'ca6', name: "Montech X3 MESH Black", price: 44 },
+                { id: 'ca7', name: "Jonsbo D200 Black", price: 44 },
+                { id: 'ca8', name: "Deepcool CG380 3F", price: 48 },
+                { id: 'ca9', name: "Thermaltake Versa J24 TG RGB", price: 48 },
+                { id: 'ca10', name: "Montech XR Black", price: 47 },
+                { id: 'ca11', name: "Deepcool CG330 3F", price: 49 },
+                { id: 'ca12', name: "Montech X5 Black", price: 52 },
+                { id: 'ca13', name: "Deepcool CG530 4F", price: 60 },
+                { id: 'ca14', name: "FSP S380 Black", price: 65 },
+                { id: 'ca15', name: "Deepcool CG580 4F V2", price: 65 },
+                { id: 'ca16', name: "Thermaltake View 200 TG ARGB Black", price: 65 },
+                { id: 'ca17', name: "Montech AIR 903 MAX Black", price: 65 },
+                { id: 'ca18', name: "Deepcool CL600", price: 78 },
+                { id: 'ca19', name: "Deepcool CG530U 4F", price: 80 },
+                { id: 'ca20', name: "Deepcool CK560 White", price: 80 },
+                { id: 'ca21', name: "Montech SKY TWO", price: 86 },
+                { id: 'ca22', name: "Montech KING 65 Pro Black", price: 88 },
+                { id: 'ca23', name: "Montech KING 45 PRO Black", price: 99 },
+                { id: 'ca24', name: "FSP M580 Black", price: 105 },
+                { id: 'ca25', name: "Montech HS01 PRO Black", price: 113 },
+                { id: 'ca26', name: "FSP CUT593P Black", price: 120 },
+                { id: 'ca27', name: "Montech KING 95 Pro Black", price: 133 },
+                { id: 'ca28', name: "Deepcool CL6600 (suvli sovutish bilan)", price: 180 }
+            ]
+        };
+
+        const stepsDef = [
+            { id: 'platform', title: 'Platforma' },
+            { id: 'cpu', title: 'Protsessor (CPU)' },
+            { id: 'mb', title: 'Ona plata (Motherboard)' },
+            { id: 'ram', title: 'Operativ xotira (RAM)' },
+            { id: 'gpu', title: 'Videokarta (GPU)' },
+            { id: 'storage', title: 'Xotira (SSD/HDD)' },
+            { id: 'cooler', title: 'Sovutish tizimi (Cooler)' },
+            { id: 'psu', title: 'Blok pitaniya (PSU)' },
+            { id: 'case', title: 'Korpus (Case)' }
+        ];
+
+        // ==========================================
+        // 2. STATE (Holat boshqaruvi)
+        // ==========================================
+        let state = {
+            config: {
+                platform: null, cpu: null, mb: null, ram: null, gpu: null, 
+                storage: null, cooler: null, psu: null, case: null
+            },
+            settings: {
+                sellerMode: false,
+                exchangeRate: 12850,
+                globalMargin: 20,
+                itemMargins: {} // { 'c1': 25, 'mb2': 15 }
+            },
+            ui: {
+                activeStepIndex: 0
+            }
+        };
+
+        // Load from LocalStorage
+        function loadState() {
+            const saved = localStorage.getItem('texnoConfigState');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    // faqat mos ID larni obyekti bilan yuklash
+                    state.settings = parsed.settings || state.settings;
+                    
+                    // Re-link objects from DB based on saved IDs
+                    if(parsed.config) {
+                        for(const step of stepsDef) {
+                            const savedId = parsed.config[step.id];
+                            if(savedId && db[step.id]) {
+                                const found = db[step.id].find(item => item.id === savedId);
+                                if(found) state.config[step.id] = found;
+                            }
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+
+        function saveState() {
+            // Save only IDs for config
+            const saveObj = {
+                settings: state.settings,
+                config: {}
+            };
+            for(const step of stepsDef) {
+                if(state.config[step.id]) {
+                    saveObj.config[step.id] = state.config[step.id].id;
+                }
+            }
+            localStorage.setItem('texnoConfigState', JSON.stringify(saveObj));
+        }
+
+        // ==========================================
+        // 3. LOGIC (Moslik va hisoblar)
+        // ==========================================
+
+        function checkCompatibility(stepId, item) {
+            // 1. CPU depends on Platform
+            if (stepId === 'cpu' && state.config.platform) {
+                if (item.type !== state.config.platform.type) return false;
+            }
+            // 2. MB depends on CPU socket
+            if (stepId === 'mb' && state.config.cpu) {
+                if (item.socket !== state.config.cpu.socket) return false;
+            }
+            // 3. RAM depends on MB DDR type
+            if (stepId === 'ram' && state.config.mb) {
+                if (item.ddr !== state.config.mb.ddr) return false;
+            }
+            // 4. PSU depends on CPU + GPU + 200W
+            if (stepId === 'psu') {
+                let requiredWatt = 200; // base + reserve
+                if (state.config.cpu && state.config.cpu.tdp) requiredWatt += state.config.cpu.tdp;
+                if (state.config.gpu && state.config.gpu.tdp) requiredWatt += state.config.gpu.tdp;
+                
+                if (item.watt < requiredWatt) return false;
+            }
+            
+            return true;
+        }
+
+        function getSellingPrice(item) {
+            if (!item || !item.price) return 0;
+            const margin = state.settings.itemMargins[item.id] !== undefined 
+                ? state.settings.itemMargins[item.id] 
+                : state.settings.globalMargin;
+            const baseSum = item.price * state.settings.exchangeRate;
+            return baseSum * (1 + (margin / 100));
+        }
+
+        function estimateFPS() {
+            if (!state.config.cpu || !state.config.gpu) return null;
+            
+            // Heuristic FPS estimation for CS2 1080p High
+            const cpuTier = state.config.cpu.tier || 1;
+            const gpuTier = state.config.gpu.tier || 1;
+            
+            let baseFps = 80; // minimum playable
+            
+            // GPU is main bottleneck in CS2 but CPU matters a lot
+            baseFps += (gpuTier * 30);
+            baseFps += (cpuTier * 20);
+            
+            // X3D processors give massive boost in CS2
+            if (state.config.cpu.name.includes("X3D")) baseFps += 70;
+            
+            // Cap reasonable values
+            if (baseFps > 600) baseFps = "500+";
+            
+            return baseFps;
+        }
+
+        // ==========================================
+        // 4. UI RENDERING
+        // ==========================================
+
+        function renderApp() {
+            renderHeader();
+            renderSteps();
+            updateSidebar();
+        }
+
+        function renderHeader() {
+            document.body.className = state.settings.sellerMode ? 'seller-mode-active' : '';
+            document.getElementById('seller-badge').style.display = state.settings.sellerMode ? 'block' : 'none';
+            document.getElementById('btn-seller-login').style.display = state.settings.sellerMode ? 'none' : 'block';
+            document.getElementById('btn-seller-logout').style.display = state.settings.sellerMode ? 'block' : 'none';
+            
+            document.getElementById('global-rate').value = state.settings.exchangeRate;
+            document.getElementById('global-margin').value = state.settings.globalMargin;
+        }
+
+        function renderSteps() {
+            const container = document.getElementById('steps-container');
+            container.innerHTML = '';
+
+            stepsDef.forEach((step, index) => {
+                const section = document.createElement('div');
+                const isCompleted = state.config[step.id] !== null;
+                const isActive = index === state.ui.activeStepIndex;
+                
+                section.className = `step-section ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}`;
+                
+                // Header
+                let selectionText = isCompleted ? state.config[step.id].name : 'Tanlanmagan';
+                
+                section.innerHTML = `
+                    <div class="step-header" onclick="toggleStep(${index})">
+                        <div class="step-title">
+                            <div class="step-number">${index + 1}</div>
+                            ${step.title}
+                        </div>
+                        <div class="step-selection-info">${selectionText}</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-tools">
+                            <input type="text" class="search-input" placeholder="Qidirish..." onkeyup="filterItems('${step.id}', this.value)" id="search-${step.id}">
+                            <select class="sort-select" onchange="sortItems('${step.id}', this.value)" id="sort-${step.id}">
+                                <option value="default">Standart</option>
+                                <option value="price-asc">Arzondan qimmatga</option>
+                                <option value="price-desc">Qimmatdan arzonga</option>
+                            </select>
+                        </div>
+                        <div class="product-grid" id="grid-${step.id}"></div>
+                    </div>
+                `;
+                
+                container.appendChild(section);
+
+                if (isActive) {
+                    renderGrid(step.id);
+                }
+            });
+        }
+
+        function renderGrid(stepId, searchTerm = '', sortOrder = 'default') {
+            const grid = document.getElementById(`grid-${stepId}`);
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            let items = [...db[stepId]];
+
+            // Search filter
+            if (searchTerm) {
+                items = items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+            }
+
+            // Sort
+            if (sortOrder === 'price-asc') items.sort((a, b) => (a.price || 0) - (b.price || 0));
+            if (sortOrder === 'price-desc') items.sort((a, b) => (b.price || 0) - (a.price || 0));
+
+            // Platform has custom render
+            if (stepId === 'platform') {
+                grid.className = 'platform-grid';
+                items.forEach(item => {
+                    const isSelected = state.config.platform?.id === item.id;
+                    const el = document.createElement('div');
+                    el.className = `product-card platform-card ${item.type} ${isSelected ? 'selected' : ''}`;
+                    el.innerHTML = `<strong>${item.name}</strong>`;
+                    el.onclick = () => selectItem('platform', item);
+                    grid.appendChild(el);
+                });
+                return;
+            }
+
+            // Normal products
+            items.forEach(item => {
+                const isCompatible = checkCompatibility(stepId, item);
+                const isSelected = state.config[stepId]?.id === item.id;
+                
+                let metaText = [];
+                if(item.socket) metaText.push(`Socket: ${item.socket}`);
+                if(item.ddr) metaText.push(item.ddr);
+                if(item.tdp) metaText.push(`TDP: ${item.tdp}W`);
+                if(item.watt) metaText.push(`${item.watt}W`);
+
+                const sellingPrice = getSellingPrice(item);
+                const currentMargin = state.settings.itemMargins[item.id] !== undefined ? state.settings.itemMargins[item.id] : state.settings.globalMargin;
+
+                const el = document.createElement('div');
+                el.className = `product-card ${isSelected ? 'selected' : ''} ${!isCompatible ? 'disabled' : ''}`;
+                
+                // Content
+                el.innerHTML = `
+                    <div>
+                        <div class="product-name">${item.name}</div>
+                        <div class="product-meta">${metaText.join(' | ')}</div>
+                        ${!isCompatible ? '<span style="color:var(--danger);font-size:0.8rem;">Mos emas</span>' : ''}
+                    </div>
+                    <div class="product-price-box">
+                        <div class="client-price" style="display:${state.settings.sellerMode ? 'none' : 'block'}; color:var(--accent); font-weight:bold;">
+                            <!-- Client shouldn't see individual prices according to prompt, leaving empty or hidden -->
+                        </div>
+                        <div class="seller-ui" onclick="event.stopPropagation()">
+                            <div>Tan narx: <strong style="color:white">$${item.price || 0}</strong></div>
+                            <div style="margin-top:5px; display:flex; align-items:center;">
+                                Marja %: <input type="number" value="${currentMargin}" onchange="updateItemMargin('${item.id}', this.value); renderApp();">
+                            </div>
+                            <div style="margin-top:5px; color:var(--success);">Sotuv: ${Math.round(sellingPrice).toLocaleString()} so'm</div>
+                        </div>
+                    </div>
+                `;
+
+                if (isCompatible) {
+                    el.onclick = () => selectItem(stepId, item);
+                }
+
+                grid.appendChild(el);
+            });
+        }
+
+        function updateSidebar() {
+            const listEl = document.getElementById('summary-items');
+            listEl.innerHTML = '';
+
+            let totalBaseUsd = 0;
+            let totalSellingUzs = 0;
+
+            stepsDef.forEach(step => {
+                const item = state.config[step.id];
+                if (!item) return;
+
+                const sellingPrice = getSellingPrice(item);
+                totalBaseUsd += item.price || 0;
+                totalSellingUzs += sellingPrice;
+
+                const el = document.createElement('div');
+                el.className = 'summary-item';
+                
+                let sellerInfo = '';
+                if(state.settings.sellerMode && item.price) {
+                    const m = state.settings.itemMargins[item.id] !== undefined ? state.settings.itemMargins[item.id] : state.settings.globalMargin;
+                    sellerInfo = `<br><span style="color:var(--text-muted);font-size:0.8rem;">$${item.price} + ${m}% = ${Math.round(sellingPrice).toLocaleString()} so'm</span>`;
+                }
+
+                el.innerHTML = `
+                    <div class="summary-item-label">${step.title}</div>
+                    <div class="summary-item-value">${item.name} ${sellerInfo}</div>
+                    <div class="summary-item-remove" onclick="removeItem('${step.id}')" title="O'chirish">✕</div>
+                `;
+                listEl.appendChild(el);
+            });
+
+            // Update Totals
+            document.getElementById('total-price').innerText = `${Math.round(totalSellingUzs).toLocaleString()} so'm`;
+            
+            if (state.settings.sellerMode) {
+                document.getElementById('seller-total-base').innerText = `$${totalBaseUsd}`;
+                const totalBaseUzs = totalBaseUsd * state.settings.exchangeRate;
+                const profit = totalSellingUzs - totalBaseUzs;
+                document.getElementById('seller-total-profit').innerText = `${Math.round(profit).toLocaleString()} so'm`;
+            }
+
+            // Update FPS
+            const fps = estimateFPS();
+            const fpsContainer = document.getElementById('fps-estimator');
+            if (fps) {
+                document.getElementById('fps-value').innerText = `~${fps} FPS`;
+                fpsContainer.classList.add('active');
+            } else {
+                fpsContainer.classList.remove('active');
+            }
+
+            // Update Telegram Link
+            updateTelegramLink(totalSellingUzs);
+        }
+
+        function updateTelegramLink(totalUzs) {
+            const btn = document.getElementById('btn-order-tg');
+            let text = "Salom! Men Texno Optom PC Konfigurator orqali quyidagi kompyuterni yig'dim:\n\n";
+            
+            stepsDef.forEach(step => {
+                if(state.config[step.id]) {
+                    text += `- ${step.title}: ${state.config[step.id].name}\n`;
+                }
+            });
+            
+            text += `\nUmumiy narx: ${Math.round(totalUzs).toLocaleString()} so'm\n\nShunga buyurtma bermoqchiman.`;
+            
+            btn.href = `https://t.me/texnooptom?text=${encodeURIComponent(text)}`;
+        }
+
+        // ==========================================
+        // 5. ACTIONS
+        // ==========================================
+
+        function selectItem(stepId, item) {
+            // If already selected, do nothing
+            if (state.config[stepId]?.id === item.id) return;
+            
+            state.config[stepId] = item;
+
+            // Cascade clear dependents
+            if (stepId === 'platform') {
+                state.config.cpu = null; state.config.mb = null; state.config.ram = null; state.config.cooler = null;
+            } else if (stepId === 'cpu') {
+                state.config.mb = null; state.config.ram = null;
+            } else if (stepId === 'mb') {
+                state.config.ram = null;
+            } else if (stepId === 'gpu') {
+                state.config.psu = null; // Recheck PSU wattage
+            }
+
+            // Auto-advance step
+            const currentIdx = stepsDef.findIndex(s => s.id === stepId);
+            if (currentIdx < stepsDef.length - 1) {
+                state.ui.activeStepIndex = currentIdx + 1;
+            }
+
+            saveState();
+            renderApp();
+        }
+
+        function removeItem(stepId) {
+            state.config[stepId] = null;
+            
+            // Cascade clear
+            if (stepId === 'platform') {
+                state.config.cpu = null; state.config.mb = null; state.config.ram = null;
+            } else if (stepId === 'cpu') {
+                state.config.mb = null; state.config.ram = null;
+            } else if (stepId === 'mb') {
+                state.config.ram = null;
+            }
+
+            saveState();
+            renderApp();
+        }
+
+        function toggleStep(index) {
+            state.ui.activeStepIndex = index;
+            renderSteps();
+        }
+
+        function filterItems(stepId, val) {
+            renderGrid(stepId, val, document.getElementById(`sort-${stepId}`).value);
+        }
+
+        function sortItems(stepId, val) {
+            renderGrid(stepId, document.getElementById(`search-${stepId}`).value, val);
+        }
+
+        function updateItemMargin(itemId, marginVal) {
+            state.settings.itemMargins[itemId] = parseFloat(marginVal) || 0;
+            saveState();
+        }
+
+        // ==========================================
+        // 6. EVENT LISTENERS
+        // ==========================================
+
+        document.getElementById('btn-seller-login').addEventListener('click', () => {
+            const pwd = prompt("Sotuvchi parolini kiriting:");
+            if (pwd === 'texno2024') {
+                state.settings.sellerMode = true;
+                saveState();
+                renderApp();
+            } else if (pwd !== null) {
+                alert("Noto'g'ri parol!");
+            }
+        });
+
+        document.getElementById('btn-seller-logout').addEventListener('click', () => {
+            state.settings.sellerMode = false;
+            saveState();
+            renderApp();
+        });
+
+        document.getElementById('global-rate').addEventListener('change', (e) => {
+            state.settings.exchangeRate = parseFloat(e.target.value) || 12850;
+            saveState();
+            updateSidebar();
+            renderSteps(); // to update prices in grid
+        });
+
+        document.getElementById('global-margin').addEventListener('change', (e) => {
+            state.settings.globalMargin = parseFloat(e.target.value) || 0;
+            saveState();
+            updateSidebar();
+            renderSteps();
+        });
+
+        document.getElementById('btn-clear-config').addEventListener('click', () => {
+            if(confirm("Barcha tanlangan detallarni o'chirmoqchimisiz?")) {
+                state.config = { platform: null, cpu: null, mb: null, ram: null, gpu: null, storage: null, cooler: null, psu: null, case: null };
+                state.ui.activeStepIndex = 0;
+                saveState();
+                renderApp();
+            }
+        });
+
+        // ==========================================
+        // 7. INITIALIZATION
+        // ==========================================
+        
+        // Populate specific steps data arrays
+        db.storage = storageList;
+        db.cooler = coolerList;
+        db.psu = psuList;
+        db.case = caseList;
+        db.cpu = cpuList;
+        db.mb = mbList;
+        db.ram = ramList;
+        db.gpu = gpuList;
+
+        window.onload = () => {
+            // Bind external list data
+            loadState();
+            renderApp();
+        };
+
+        // Re-declaring the user provided arrays above in the initialization to avoid scope issues
+        const cpuList = db.cpu;
+        const mbList = db.mb;
+        const ramList = db.ram;
+        const gpuList = db.gpu;
+        const storageList = db.storage;
+        const coolerList = db.cooler;
+        const psuList = db.psu;
+        const caseList = db.case;
+
+    </script>
+</body>
+</html>
