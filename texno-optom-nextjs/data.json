@@ -1,10 +1,10 @@
 {
   "cpu": [
-    { "id": "c1", "name": "Intel Core i5-12400F", "socket": "LGA1700", "price": 137, "tdp": 65, "type": "intel" },
-    { "id": "c2", "name": "Intel Core i5-13400F", "socket": "LGA1700", "price": 157, "tdp": 65, "type": "intel" },
-    { "id": "c3", "name": "AMD Ryzen 5 5600", "socket": "AM4", "price": 125, "tdp": 65, "type": "amd" },
-    { "id": "c4", "name": "AMD Ryzen 5 7500F", "socket": "AM5", "price": 125, "tdp": 65, "type": "amd" },
-    { "id": "c5", "name": "AMD Ryzen 7 7800X3D", "socket": "AM5", "price": 305, "tdp": 120, "type": "amd" }
+    { "id": "c1", "name": "Intel Core i5-12400F", "socket": "LGA1700", "price": 126, "tdp": 65, "type": "intel" },
+    { "id": "c2", "name": "Intel Core i5-13400F", "socket": "LGA1700", "price": 136, "tdp": 65, "type": "intel" },
+    { "id": "c3", "name": "AMD Ryzen 5 5600", "socket": "AM4", "price": 115, "tdp": 65, "type": "amd" },
+    { "id": "c4", "name": "AMD Ryzen 5 7500F", "socket": "AM5", "price": 122, "tdp": 65, "type": "amd" },
+    { "id": "c5", "name": "AMD Ryzen 7 7800X3D", "socket": "AM5", "price": 275, "tdp": 120, "type": "amd" }
   ],
   "mb": [
     { "id": "m1", "name": "Gigabyte H610M K DDR4", "socket": "LGA1700", "ddr": "DDR4", "price": 56, "form_factor": "Micro-ATX" },
@@ -13,31 +13,31 @@
     { "id": "m4", "name": "MSI PRO B650M-P DDR5", "socket": "AM5", "ddr": "DDR5", "price": 110, "form_factor": "Micro-ATX" }
   ],
   "ram": [
-    { "id": "r1", "name": "Lexar DDR4 16GB 3200MHz", "ddr": "DDR4", "price": 35 },
-    { "id": "r2", "name": "Kingston DDR4 32GB 3600MHz RGB", "ddr": "DDR4", "price": 192 },
+    { "id": "r1", "name": "Lexar DDR4 16GB 3200MHz", "ddr": "DDR4", "price": 82 },
+    { "id": "r2", "name": "Kingston DDR4 32GB 3600MHz RGB", "ddr": "DDR4", "price": 190 },
     { "id": "r3", "name": "Apacer DDR5 16GB 5600MHz", "ddr": "DDR5", "price": 170 },
-    { "id": "r4", "name": "Kingston DDR5 32GB 6000MHz RGB", "ddr": "DDR5", "price": 400 }
+    { "id": "r4", "name": "Kingston DDR5 32GB 6000MHz RGB", "ddr": "DDR5", "price": 407 }
   ],
   "gpu": [
     { "id": "g1", "name": "Arktek GTX1660 Super 6GB", "price": 170, "tdp": 125 },
-    { "id": "g2", "name": "Peladin RTX3060 12GB", "price": 305, "tdp": 170 },
-    { "id": "g3", "name": "Zotac RTX5060 TWIN EDGE 8GB", "price": 380, "tdp": 150 },
+    { "id": "g2", "name": "Peladin RTX3060 12GB", "price": 300, "tdp": 170 },
+    { "id": "g3", "name": "Zotac RTX5060 TWIN EDGE 8GB", "price": 360, "tdp": 150 },
     { "id": "g4", "name": "Gigabyte RTX5060Ti WINDFORCE 8GB", "price": 430, "tdp": 180 },
     { "id": "g5", "name": "ASUS RTX5070 DUAL OC 12GB", "price": 700, "tdp": 250 }
   ],
   "storage": [
     { "id": "s1", "name": "SSD Lexar 256GB SATA", "price": 50 },
-    { "id": "s2", "name": "SSD M.2 Lexar 512GB NVMe", "price": 80 },
-    { "id": "s3", "name": "SSD M.2 Samsung 1TB 990 PRO NVMe", "price": 215 },
-    { "id": "s4", "name": "HDD 1TB Toshiba 5700Rpm", "price": 78 }
+    { "id": "s2", "name": "SSD M.2 Lexar 512GB NVMe", "price": 77 },
+    { "id": "s3", "name": "SSD M.2 Samsung 1TB 990 PRO NVMe", "price": 225 },
+    { "id": "s4", "name": "HDD 1TB Toshiba 5700Rpm", "price": 77 }
   ],
   "cooler": [
     { "id": "co1", "name": "Deepcool AG300", "price": 10, "sockets": ["LGA1700", "AM4", "AM5"] },
-    { "id": "co2", "name": "Deepcool AK400", "price": 22, "sockets": ["LGA1700", "AM4", "AM5", "LGA1851"] },
+    { "id": "co2", "name": "Deepcool AK400", "price": 20, "sockets": ["LGA1700", "AM4", "AM5", "LGA1851"] },
     { "id": "co3", "name": "Deepcool LS720 (suvli)", "price": 115, "sockets": ["LGA1700", "AM4", "AM5", "LGA1851"] }
   ],
   "psu": [
-    { "id": "p1", "name": "Deepcool PF450 450W 80+", "watt": 450, "price": 24 },
+    { "id": "p1", "name": "Deepcool PF450 450W 80+", "watt": 450, "price": 23 },
     { "id": "p2", "name": "Deepcool PF650 650W 80+", "watt": 650, "price": 39 },
     { "id": "p3", "name": "Deepcool PN750D 750W Gold", "watt": 750, "price": 76 },
     { "id": "p4", "name": "Montech Century II 1050W Gold", "watt": 1050, "price": 116 }
