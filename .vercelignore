@@ -1,5 +1,6 @@
 # OQ RO'YXAT: faqat quyidagilar internetga chiqadi, qolgan hamma narsa yopiq.
 /*
 !/index.html
-!/aksessuarlar/
+!/aksessuarlar
+!/aksessuarlar/**
 /aksessuarlar/products.json
