@@ -4,3 +4,5 @@
 !/aksessuarlar
 !/aksessuarlar/**
 /aksessuarlar/products.json
+!/api
+!/api/**
