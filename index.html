@@ -1039,6 +1039,56 @@ src="https://www.facebook.com/tr?id=1307265360656280&ev=PageView&noscript=1"/></
     background: rgba(255,255,255,0.05); color: var(--text-muted);
   }
   .gpu-hint.ok { background: rgba(16,185,129,0.12); color: #6ee7b7; }
+
+  /* ===== Xulosa: katta korpus + ixcham ro'yxat ===== */
+  .summary-body { padding-top: 1rem; }
+  .summary-title { margin-bottom: 1rem; }
+  .summary-title h2 { font-size: clamp(22px, 4vw, 32px); margin-bottom: 0.25rem; }
+  .summary-title p { font-size: 13px; }
+  .build-hero { margin-bottom: 10px; }
+  .hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .hero-img {
+    background: #fff;
+    height: clamp(170px, 26vh, 240px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-img img { max-width: 92%; max-height: 92%; object-fit: contain; }
+  .hero-emoji { font-size: 72px; }
+  .hero-info { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; }
+  .hero-name { font-size: 15px; font-weight: 600; line-height: 1.25; }
+  .build-list.compact { padding: 2px 10px; margin-bottom: 1rem; }
+  .spec-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 5px 2px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-img {
+    width: 34px; height: 34px; flex-shrink: 0;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .spec-img img { max-width: 92%; max-height: 92%; object-fit: contain; }
+  .spec-img.no-img { background: rgba(255,255,255,0.06); font-size: 17px; }
+  .spec-text { flex: 1; min-width: 0; }
+  .spec-cat { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.15; }
+  .spec-name { font-size: 13px; font-weight: 500; line-height: 1.25; overflow-wrap: anywhere; }
+  .spec-edit { color: var(--text-dim); font-size: 13px; flex-shrink: 0; padding: 0 6px; }
+  .spec-x {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid var(--border); background: rgba(255,255,255,0.06);
+    color: var(--text-muted); font-size: 13px; cursor: pointer;
+  }
+  .spec-x:hover { color: var(--accent); border-color: var(--accent); }
+  .spec-row.is-none .spec-name { color: var(--text-dim); font-style: italic; }
+  @media (max-width: 480px) { .summary-title p { display: none; } .summary-title { margin-bottom: 0.6rem; } }
 </style>
 </head>
 <body>
@@ -1107,12 +1157,7 @@ src="https://www.facebook.com/tr?id=1307265360656280&ev=PageView&noscript=1"/></
       <p>Quyida tanlagan komponentlaringiz va aniq sotuv narxi ko'rsatilgan.</p>
     </div>
     
-    <div id="monitor-toggle-container" style="display:none; text-align:right; margin-bottom:10px;">
-        <label style="cursor:pointer; font-weight:bold; color: #fff; background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-            <input type="checkbox" id="exclude-monitor-cb" onchange="renderSummary()"> Monitorsiz hisoblash
-        </label>
-    </div>
-
+    <div class="build-hero" id="build-hero"></div>
     <div class="build-list" id="build-list"></div>
     <div class="total-block">
       <div class="total-label">Sotish narxi</div>
@@ -1264,6 +1309,13 @@ const NO_GPU = {
   note: "Protsessorning o'rnatilgan grafikasi ishlaydi. Ofis, o'qish, yengil o'yinlar uchun. Video kartani keyin qo'shsa bo'ladi."
 };
 
+const NO_MONITOR = {
+  id: 'monitor-none',
+  name: 'Monitorsiz',
+  priceUsd: 0, none: true, emoji: '🚫',
+  note: "Monitor kerak emas: mijozning o'zida bor yoki keyinroq oladi."
+};
+
 function getCompatibleOptions(category) {
   const all = CATALOG[category] || [];
   const list = all.filter(opt => {
@@ -1285,6 +1337,7 @@ function getCompatibleOptions(category) {
     return true;
   });
   if (category === 'gpu' && build.cpu && build.cpu.igpu) return [NO_GPU, ...list];
+  if (category === 'monitor') return [NO_MONITOR, ...list];
   return list;
 }
 
@@ -1485,7 +1538,9 @@ function renderStep(keepScroll) {
 }
 
 function selectOption(category, id) {
-  const opt = (category === 'gpu' && id === NO_GPU.id) ? NO_GPU : CATALOG[category].find(o => o.id === id);
+  const opt = (category === 'gpu' && id === NO_GPU.id) ? NO_GPU
+            : (category === 'monitor' && id === NO_MONITOR.id) ? NO_MONITOR
+            : CATALOG[category].find(o => o.id === id);
   if (!opt) return;
   build[category] = opt;
   // Default RAM qty to 1 when newly selected (or preserve if already set)
@@ -1560,59 +1615,76 @@ function showSummary() {
   trackEvent('ViewSummary');
 }
 
+function specImg(item, key) {
+  return item.img
+    ? `<div class="spec-img"><img src="${item.img}" alt="${item.name}"></div>`
+    : `<div class="spec-img no-img">${item.emoji || CATEGORY_EMOJI[key]}</div>`;
+}
+
 function renderSummary() {
   const list = document.getElementById('build-list');
+  const hero = document.getElementById('build-hero');
+  list.className = 'build-list compact';
   let totalUsd = 0;
   const accessoriesList = getSelectedAccessories();
   const accessoriesUsd = accessoriesList.reduce((s, a) => s + (a.priceUsd || 0), 0);
 
-  const excludeCb = document.getElementById('exclude-monitor-cb');
-  const excludeMonitor = excludeCb && excludeCb.checked;
-  const toggleContainer = document.getElementById('monitor-toggle-container');
-  if (toggleContainer) {
-    toggleContainer.style.display = build['monitor'] ? 'block' : 'none';
+  // narx: barcha tanlangan qismlar (aksessuarlardan tashqari)
+  STEPS.forEach(s => {
+    if (s.key === 'accessories' || !build[s.key]) return;
+    const qty = (s.key === 'ram') ? (build.ramQty || 1) : 1;
+    totalUsd += (build[s.key].priceUsd || 0) * qty;
+  });
+
+  // katta korpus kartasi
+  const cs = build.case;
+  if (cs) {
+    hero.style.display = '';
+    hero.innerHTML = `
+      <div class="hero-card" onclick="jumpToStep('case')" title="Bosing va o'zgartiring">
+        <div class="hero-img">${cs.img ? `<img src="${cs.img}" alt="${cs.name}">` : `<span class="hero-emoji">${CATEGORY_EMOJI.case}</span>`}</div>
+        <div class="hero-info">
+          <div>
+            <div class="spec-cat">${CATEGORY_LABELS.case}</div>
+            <div class="hero-name">${cs.name}</div>
+          </div>
+          <span class="spec-edit">✎</span>
+        </div>
+      </div>`;
+  } else {
+    hero.style.display = 'none';
+    hero.innerHTML = '';
   }
 
-  list.innerHTML = STEPS.map(s => {
+  // ixcham ro'yxat (platforma va korpusdan tashqari: korpus tepada katta)
+  const rows = STEPS.filter(s => s.key !== 'platform' && s.key !== 'case').map(s => {
     if (s.key === 'accessories') {
       return accessoriesList.map(a => `
-      <div class="build-item clickable" onclick="jumpToStep('accessories')" title="Bosing va o'zgartiring">
-        <div class="build-item-img"><img src="${a.img}" alt="${a.name}"></div>
-        <div class="build-item-info">
-          <div class="build-item-cat">${(ACCESSORY_TYPES.find(t => t.key === a.type) || {}).label || CATEGORY_LABELS.accessories}</div>
-          <div class="build-item-name">${a.name}</div>
+      <div class="spec-row" onclick="jumpToStep('accessories')" title="Bosing va o'zgartiring">
+        ${specImg(a, 'accessories')}
+        <div class="spec-text">
+          <div class="spec-cat">${(ACCESSORY_TYPES.find(t => t.key === a.type) || {}).label || CATEGORY_LABELS.accessories}</div>
+          <div class="spec-name">${a.name}</div>
         </div>
+        <button type="button" class="spec-x" onclick="event.stopPropagation(); removeAccessory('${a.id}')" aria-label="Olib tashlash">✕</button>
       </div>`).join('');
     }
     const item = build[s.key];
     if (!item) return '';
-
-    if (s.key === 'monitor' && excludeMonitor) {
-      return `
-      <div class="build-item clickable" onclick="jumpToStep('${s.key}')" title="Bosing va o'zgartiring">
-        <div class="build-item-img no-img">${CATEGORY_EMOJI[s.key]}</div>
-        <div class="build-item-info">
-          <div class="build-item-cat">${CATEGORY_LABELS[s.key]}</div>
-          <div class="build-item-name">Monitorsiz</div>
-        </div>
-      </div>`;
-    }
-
     const qty = (s.key === 'ram') ? (build.ramQty || 1) : 1;
-    totalUsd += (item.priceUsd || 0) * qty;
-    const imgHtml = item.img
-      ? `<div class="build-item-img"><img src="${item.img}" alt="${item.name}"></div>`
-      : `<div class="build-item-img no-img">${CATEGORY_EMOJI[s.key]}</div>`;
     const qtyLabel = (qty > 1) ? ` <span class="qty-tag">× ${qty} ta</span>` : '';
+    const canRemove = !item.none && (s.key === 'monitor' || (s.key === 'gpu' && build.cpu && build.cpu.igpu));
     return `
-      <div class="build-item clickable" onclick="jumpToStep('${s.key}')" title="Bosing va o'zgartiring">
-        ${imgHtml}
-        <div class="build-item-info">
-          <div class="build-item-cat">${CATEGORY_LABELS[s.key]}</div>
-          <div class="build-item-name">${item.name}${qtyLabel}</div>
+      <div class="spec-row ${item.none ? 'is-none' : ''}" onclick="jumpToStep('${s.key}')" title="Bosing va o'zgartiring">
+        ${specImg(item, s.key)}
+        <div class="spec-text">
+          <div class="spec-cat">${CATEGORY_LABELS[s.key]}</div>
+          <div class="spec-name">${item.name}${qtyLabel}</div>
         </div>
+        ${canRemove ? `<button type="button" class="spec-x" onclick="event.stopPropagation(); removeSelection('${s.key}')" aria-label="Olib tashlash">✕</button>` : '<span class="spec-edit">✎</span>'}
       </div>`;
   }).join('');
+  list.innerHTML = rows;
 
   const margin = 90;
   const salePrice = totalUsd + margin + accessoriesUsd;
@@ -1629,6 +1701,25 @@ function renderSummary() {
   build._accessoriesUsd = accessoriesUsd;
   const ctaPrice = document.getElementById('cta-price');
   if (ctaPrice) ctaPrice.textContent = totalUsd > 0 ? '$' + salePrice.toLocaleString('en-US') : '—';
+}
+
+function removeSelection(key) {
+  if (key === 'gpu') {
+    if (!(build.cpu && build.cpu.igpu)) return;   // grafikasiz protsessorda videokartasiz bo'lmaydi
+    build.gpu = NO_GPU;
+  } else if (key === 'monitor') {
+    build.monitor = NO_MONITOR;
+  } else {
+    return;
+  }
+  saveBuild();
+  renderSummary();
+}
+
+function removeAccessory(id) {
+  build.accessories = (Array.isArray(build.accessories) ? build.accessories : []).filter(x => x !== id);
+  saveBuild();
+  renderSummary();
 }
 
 function scrollToLeadForm() {
