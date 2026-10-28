@@ -1850,7 +1850,7 @@ async function buildSpecCanvas() {
     if (p.im) contain(p.im, p.x, hy, p.w, ph, 26);
     else { g.textAlign = 'center'; g.fillStyle = '#000'; g.font = '120px sans-serif'; g.fillText(CATEGORY_EMOJI[p.key], p.x + p.w / 2, hy + ph / 2 + 40); }
     g.textAlign = 'left';
-    g.fillStyle = '#F43F5E'; g.font = `700 21px ${FB}`; g.fillText(CATEGORY_LABELS[p.key].toUpperCase(), p.x + 6, hy + ph + 38);
+    g.fillStyle = '#fff'; g.font = `700 21px ${FB}`; g.fillText(CATEGORY_LABELS[p.key].toUpperCase(), p.x + 6, hy + ph + 38);
     g.fillStyle = '#fff'; g.font = `700 31px ${FB}`;
     wrap(p.item.name, p.w - 12, 2).forEach((ln, i) => g.fillText(ln, p.x + 6, hy + ph + 76 + i * 38));
   });
@@ -1878,13 +1878,12 @@ async function buildSpecCanvas() {
     if (it.sub) { g.textAlign = 'right'; g.fillStyle = '#94A3B8'; g.font = `500 ${Math.round(23 * sc)}px ${FB}`; g.fillText(it.sub, W - 50, y + rowH * 0.62); g.textAlign = 'left'; }
   });
 
-  // narx: yengil grafit maydon, ingichka chiziq
+  // narx: och panel, qora matn (fonda ajralib turadi)
   const py = 1660, price = (build._totalUsd || 0) + SALE_MARGIN + (build._accessoriesUsd || 0);
-  g.fillStyle = '#121214'; rr(50, py, W - 100, 150, 24); g.fill();
-  g.strokeStyle = 'rgba(255,255,255,0.14)'; g.lineWidth = 2; rr(50, py, W - 100, 150, 24); g.stroke();
-  g.textAlign = 'left'; g.fillStyle = '#8B8B93'; g.font = `600 21px ${FB}`; g.fillText('SOTISH NARXI', 86, py + 52);
-  g.fillStyle = '#fff'; g.font = `700 80px ${FD}`; g.fillText('$' + price.toLocaleString('en-US'), 86, py + 128);
-  g.textAlign = 'right'; g.fillStyle = '#C9C9CF'; g.font = `500 25px ${FB}`;
+  g.fillStyle = '#F4F4F5'; rr(50, py, W - 100, 150, 24); g.fill();
+  g.textAlign = 'left'; g.fillStyle = '#71717A'; g.font = `600 21px ${FB}`; g.fillText('SOTISH NARXI', 86, py + 52);
+  g.fillStyle = '#09090B'; g.font = `700 80px ${FD}`; g.fillText('$' + price.toLocaleString('en-US'), 86, py + 128);
+  g.textAlign = 'right'; g.fillStyle = '#3F3F46'; g.font = `500 25px ${FB}`;
   ['✓ 12 oy kafolat', '✓ Windows + drayverlar', '✓ 1 kunda yetkazib berish'].forEach((t, i) => g.fillText(t, W - 86, py + 52 + i * 38));
 
   // aloqa
