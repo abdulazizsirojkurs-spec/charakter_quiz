@@ -1773,11 +1773,11 @@ let specUrl = null;
 
 async function buildSpecCanvas() {
   if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) {} }
-  const W = 1080, H = 1920, M = 64;
+  const W = 1080, H = 1920;
   const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
   const g = cv.getContext('2d');
   const FB = 'Inter, -apple-system, "Segoe UI", Roboto, sans-serif';
-  const C = { bg: '#000000', text: '#F5F5F4', soft: '#B8B8BD', mute: '#85858B', line: 'rgba(255,255,255,0.12)', accent: '#F43F5E' };
+  const FD = '"Space Grotesk", Inter, -apple-system, sans-serif';
 
   const loadImg = src => new Promise(res => {
     if (!src) return res(null);
@@ -1794,18 +1794,6 @@ async function buildSpecCanvas() {
     const s = Math.min((w - 2 * pad) / im.width, (h - 2 * pad) / im.height);
     const dw = im.width * s, dh = im.height * s;
     g.drawImage(im, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
-  };
-  const spacedW = (t, sp) => { let w = 0; for (const ch of t) w += g.measureText(ch).width + sp; return w - sp; };
-  const spaced = (t, x, y, sp, right) => {
-    let cx = right ? x - spacedW(t, sp) : x;
-    for (const ch of t) { g.fillText(ch, cx, y); cx += g.measureText(ch).width + sp; }
-  };
-  const fit = (t, maxW, size, minSize, weight) => {
-    let s = size; g.font = `${weight} ${s}px ${FB}`;
-    while (g.measureText(t).width > maxW && s > minSize) { s -= 1; g.font = `${weight} ${s}px ${FB}`; }
-    if (g.measureText(t).width <= maxW) return t;
-    let r = t; while (g.measureText(r + '…').width > maxW && r.length > 1) r = r.slice(0, -1);
-    return r + '…';
   };
   const wrap = (text, maxW, maxLines) => {
     const words = String(text).split(' '); const lines = []; let cur = '';
@@ -1829,82 +1817,79 @@ async function buildSpecCanvas() {
   STEPS.forEach(s => {
     if (s.key === 'platform' || s.key === 'case' || s.key === 'monitor' || s.key === 'accessories') return;
     const it = build[s.key]; if (!it) return;
-    items.push({ label: CATEGORY_LABELS[s.key], name: it.name, sub: SPEC_SUB[s.key] ? SPEC_SUB[s.key](it) : '' });
+    items.push({ label: CATEGORY_LABELS[s.key], name: it.name, sub: SPEC_SUB[s.key] ? SPEC_SUB[s.key](it) : '', img: it.img, emoji: it.emoji || CATEGORY_EMOJI[s.key] });
   });
   getSelectedAccessories().forEach(a => items.push({
-    label: (ACCESSORY_TYPES.find(t => t.key === a.type) || {}).label || 'Aksessuar', name: a.name, sub: ''
+    label: (ACCESSORY_TYPES.find(t => t.key === a.type) || {}).label || 'Aksessuar', name: a.name, sub: '', img: a.img, emoji: '⌨️'
   }));
 
   const logoSrc = (document.querySelector('.header-logo img') || {}).src;
-  const [logoIm, caseIm, monIm] = await Promise.all([
-    loadImg(logoSrc), loadImg(build.case && build.case.img), loadImg(mon && mon.img)
+  const [logoIm, caseIm, monIm, ...thumbs] = await Promise.all([
+    loadImg(logoSrc), loadImg(build.case && build.case.img), loadImg(mon && mon.img), ...items.map(i => loadImg(i.img))
   ]);
 
-  // fon: tekis, gradientsiz
-  g.fillStyle = C.bg; g.fillRect(0, 0, W, H);
+  // fon: bir xil qora
+  g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
 
   // sarlavha
-  if (logoIm) { const lh = 64, lw = logoIm.width * lh / logoIm.height; g.drawImage(logoIm, M, 52, lw, lh); }
+  if (logoIm) { const lh = 84, lw = logoIm.width * lh / logoIm.height; g.drawImage(logoIm, 50, 38, lw, lh); }
+  g.textBaseline = 'alphabetic'; g.textAlign = 'right';
+  g.fillStyle = '#fff'; g.font = `700 44px ${FD}`; g.fillText("Gaming PC yig'ilmasi", W - 50, 84);
   const d = new Date(); const ds = `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
-  g.textAlign = 'left'; g.fillStyle = C.mute; g.font = `500 19px ${FB}`;
-  spaced('GAMING PC YIG‘ILMASI', W - M, 84, 2.6, true);
-  g.font = `400 21px ${FB}`; g.textAlign = 'right'; g.fillText(ds, W - M, 114);
+  g.fillStyle = '#94A3B8'; g.font = `500 24px ${FB}`; g.fillText(ds, W - 50, 120);
 
-  // korpus (+ monitor): oq maydon, kichik burchak
-  const hy = 172, ph = items.length > 12 ? 360 : 460, gap = 24;
-  const cw = W - 2 * M;
+  // korpus (+ monitor)
+  const hy = 150, ph = items.length > 12 ? 380 : 470;
   const panels = mon ? [
-    { x: M, w: (cw - gap) / 2, im: caseIm, item: build.case, key: 'case' },
-    { x: M + (cw - gap) / 2 + gap, w: (cw - gap) / 2, im: monIm, item: mon, key: 'monitor' }
-  ] : [{ x: M, w: cw, im: caseIm, item: build.case, key: 'case' }];
+    { x: 50, w: 475, im: caseIm, item: build.case, key: 'case' },
+    { x: 555, w: 475, im: monIm, item: mon, key: 'monitor' }
+  ] : [{ x: 50, w: 980, im: caseIm, item: build.case, key: 'case' }];
   panels.forEach(p => {
     if (!p.item) return;
-    g.fillStyle = '#fff'; rr(p.x, hy, p.w, ph, 8); g.fill();
-    if (p.im) contain(p.im, p.x, hy, p.w, ph, 30);
-    else { g.textAlign = 'center'; g.fillStyle = '#111'; g.font = '110px sans-serif'; g.fillText(CATEGORY_EMOJI[p.key], p.x + p.w / 2, hy + ph / 2 + 36); }
-    g.textAlign = 'left'; g.fillStyle = C.mute; g.font = `600 17px ${FB}`;
-    spaced(CATEGORY_LABELS[p.key].toUpperCase(), p.x, hy + ph + 46, 2.4);
-    g.fillStyle = C.text; g.font = `500 32px ${FB}`;
-    wrap(p.item.name, p.w, 2).forEach((ln, i) => g.fillText(ln, p.x, hy + ph + 90 + i * 40));
+    g.fillStyle = '#fff'; rr(p.x, hy, p.w, ph, 28); g.fill();
+    if (p.im) contain(p.im, p.x, hy, p.w, ph, 26);
+    else { g.textAlign = 'center'; g.fillStyle = '#000'; g.font = '120px sans-serif'; g.fillText(CATEGORY_EMOJI[p.key], p.x + p.w / 2, hy + ph / 2 + 40); }
+    g.textAlign = 'left';
+    g.fillStyle = '#F43F5E'; g.font = `700 21px ${FB}`; g.fillText(CATEGORY_LABELS[p.key].toUpperCase(), p.x + 6, hy + ph + 38);
+    g.fillStyle = '#fff'; g.font = `700 31px ${FB}`;
+    wrap(p.item.name, p.w - 12, 2).forEach((ln, i) => g.fillText(ln, p.x + 6, hy + ph + 76 + i * 38));
   });
 
-  // ro'yxat: yupqa chiziqlar, rasmsiz
-  const ly = hy + ph + 160, lBottom = 1560, n = Math.max(items.length, 1);
-  const dense = n > 12;
-  const rowH = Math.min(94, Math.floor((lBottom - ly) / n));
-  const sc = Math.min(1.1, Math.max(0.6, rowH / 90));
-  g.strokeStyle = C.line; g.lineWidth = 1.5;
+  // ro'yxat
+  const ly = hy + ph + 150, lBottom = 1620, n = Math.max(items.length, 1);
+  const rowH = Math.min(108, Math.floor((lBottom - ly) / n));
+  const sc = Math.min(1.18, Math.max(0.55, rowH / 92));
   items.forEach((it, i) => {
     const y = ly + i * rowH;
-    g.beginPath(); g.moveTo(M, y); g.lineTo(W - M, y); g.stroke();
-    const hasSub = !!it.sub && !dense;
-    const base = y + rowH * (hasSub ? 0.50 : 0.60);
-    g.textAlign = 'left'; g.fillStyle = C.mute; g.font = `600 ${Math.round(16 * sc)}px ${FB}`;
-    spaced(it.label.toUpperCase(), M, base, 2.2);
-    g.fillStyle = C.text;
-    const nm = fit(it.name, W - M - (M + 250), Math.round(30 * sc), 20, 500);
-    g.fillText(nm, M + 250, base);
-    if (hasSub) { g.fillStyle = C.mute; g.font = `400 ${Math.round(22 * sc)}px ${FB}`; g.fillText(it.sub, M + 250, base + 32 * sc); }
+    g.strokeStyle = 'rgba(255,255,255,0.09)'; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(50, y); g.lineTo(W - 50, y); g.stroke();
+    const th = rowH - 18, tx = 50, ty = y + 9;
+    g.fillStyle = '#fff'; rr(tx, ty, th, th, 12); g.fill();
+    const im = thumbs[i];
+    if (im) contain(im, tx, ty, th, th, 5);
+    else { g.textAlign = 'center'; g.fillStyle = '#000'; g.font = `${Math.round(th * 0.55)}px sans-serif`; g.fillText(it.emoji, tx + th / 2, ty + th * 0.68); g.textAlign = 'left'; }
+    const textX = tx + th + 22;
+    const subW = it.sub ? 290 : 0;
+    g.textAlign = 'left'; g.fillStyle = '#64748B'; g.font = `600 ${Math.round(19 * sc)}px ${FB}`;
+    g.fillText(it.label.toUpperCase(), textX, y + rowH * 0.34);
+    g.fillStyle = '#fff'; g.font = `600 ${Math.round(29 * sc)}px ${FB}`;
+    const lines = wrap(it.name, W - 50 - subW - 10 - textX, rowH >= 72 ? 2 : 1);
+    lines.forEach((ln, k) => g.fillText(ln, textX, y + rowH * (lines.length > 1 ? 0.62 : 0.72) + k * 32 * sc));
+    if (it.sub) { g.textAlign = 'right'; g.fillStyle = '#94A3B8'; g.font = `500 ${Math.round(23 * sc)}px ${FB}`; g.fillText(it.sub, W - 50, y + rowH * 0.62); g.textAlign = 'left'; }
   });
-  g.beginPath(); g.moveTo(M, ly + n * rowH); g.lineTo(W - M, ly + n * rowH); g.stroke();
 
-  // narx
-  const price = (build._totalUsd || 0) + SALE_MARGIN + (build._accessoriesUsd || 0);
-  const py = 1610;
-  g.fillStyle = C.accent; g.fillRect(M, py, 56, 4);
-  g.textAlign = 'left'; g.fillStyle = C.mute; g.font = `600 18px ${FB}`;
-  spaced('SOTISH NARXI', M, py + 50, 2.6);
-  g.fillStyle = C.text; g.font = `600 108px ${FB}`;
-  g.fillText('$' + price.toLocaleString('en-US'), M - 4, py + 158);
-  g.textAlign = 'right'; g.fillStyle = C.soft; g.font = `400 26px ${FB}`;
-  ['12 oy kafolat', 'Windows va drayverlar', '1 kunda yetkazib berish'].forEach((t, i) => g.fillText(t, W - M, py + 92 + i * 40));
+  // narx: yengil grafit maydon, ingichka chiziq
+  const py = 1660, price = (build._totalUsd || 0) + SALE_MARGIN + (build._accessoriesUsd || 0);
+  g.fillStyle = '#121214'; rr(50, py, W - 100, 150, 24); g.fill();
+  g.strokeStyle = 'rgba(255,255,255,0.14)'; g.lineWidth = 2; rr(50, py, W - 100, 150, 24); g.stroke();
+  g.textAlign = 'left'; g.fillStyle = '#8B8B93'; g.font = `600 21px ${FB}`; g.fillText('SOTISH NARXI', 86, py + 52);
+  g.fillStyle = '#fff'; g.font = `700 80px ${FD}`; g.fillText('$' + price.toLocaleString('en-US'), 86, py + 128);
+  g.textAlign = 'right'; g.fillStyle = '#C9C9CF'; g.font = `500 25px ${FB}`;
+  ['✓ 12 oy kafolat', '✓ Windows + drayverlar', '✓ 1 kunda yetkazib berish'].forEach((t, i) => g.fillText(t, W - 86, py + 52 + i * 38));
 
   // aloqa
-  g.strokeStyle = C.line; g.beginPath(); g.moveTo(M, 1810); g.lineTo(W - M, 1810); g.stroke();
-  g.fillStyle = C.text; g.font = `500 31px ${FB}`;
-  g.textAlign = 'right'; g.fillText('+998 99 465 64 60', W / 2 - 34, 1870);
-  g.textAlign = 'left'; g.fillText('+998 50 151 88 11', W / 2 + 34, 1870);
-  g.fillStyle = C.line; g.fillRect(W / 2 - 1, 1844, 2, 34);
+  g.textAlign = 'center'; g.fillStyle = '#fff'; g.font = `700 36px ${FB}`;
+  g.fillText('+998 99 465 64 60   ·   +998 50 151 88 11', W / 2, 1870);
   return cv;
 }
 
